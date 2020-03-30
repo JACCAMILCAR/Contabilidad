@@ -1,0 +1,18 @@
+
+l=limit * 2;
+  for (int i = 0; i < l; i++) {
+
+               
+
+            matriz[a][b] = input.nextInt();
+ 		if(b==(limit-1)){
+		b=0;a++;
+			}
+            b++;
+
+          }
+
+
+
+Proteger codigo fuente
+Investigar
