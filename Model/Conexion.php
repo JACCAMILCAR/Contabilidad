@@ -1,24 +1,46 @@
 <?php
- 	class Conexion extends PDO
+ 	class Conexion
 	{
-		private $tipoDB = 'mysql';
-		private $servidor = 'localhost';
-		private $user = 'root';
-		private $password = '';
-		private $db = 'Kantuta';
-
-		public function __construct()
+		private static $conexion;
+		
+		public static function abrirConexion()
 		{
-			try {
-				  parent::__construct($this->tipoDB.':host='.$this->servidor.';dbname='.$this->db, $this->user, $this->password);
-				//   echo "Conexion exitosa"." JACC";
-			} 
-			catch (PDOException $e ) {
-				echo 'ERROR: No se logro hacer una conexion a la Base de Datos - '.$e->getMessage();
-				exit;
+			if(!isset(self::$conexion))
+			{
+				try{
+					include_once './conf.php';
+					self::$conexion = new PDO('pgsql:host='.Nombre_Servidor.'; dbname='.BASE_DE_DATOS,NOMBRE_USUARIO,PASSWORD);
+					//self::$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ATTR_EXCEPTION);
+					self::$conexion->exec("SET NAMES 'utf8'");
+
+				}
+
+				catch(PDOException $ex){
+					print "ERROR". $ex->getMessage()."<br>";
+
+				}
 			}
 		}
+		public static function cerrarCorrecion()
+		{
+			if(isset(self::$conexion))
+			{
+				self::$conexion =null;
+			}
+
+		}
+	   public static function obtenerConexion()
+	   {
+		if(isset(self::$conexion))
+		{
+			echo "Conexion Establecida";
+		}
+		else
+		{
+			echo "No se pudo conectar con la base de datos";
+		}
+	   }
 	}
-		// $con = new Conexion();
-	//camtasia editor de videos
+	conexion::abrirConexion();
+	conexion::obtenerConexion();
  ?>

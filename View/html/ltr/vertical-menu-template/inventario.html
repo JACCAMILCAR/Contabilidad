@@ -36,6 +36,31 @@
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
 
+
+
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <!-- END: Custom CSS-->
+
 </head>
 <!-- END: Head-->
 
@@ -56,7 +81,7 @@
                                 <div class="user-nav d-sm-flex d-none"><span class="user-name">Ronald Vega</span><span class="user-status text-muted">Adminstrador</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/7.png" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="auth-login.html"><i class="bx bx-power-off mr-50"></i> Salir</a>
+                                <a class="dropdown-item" href="../../../index.html"><i class="bx bx-power-off mr-50"></i> Salir</a>
                             </div>
                         </li>
                     </ul>
@@ -87,21 +112,15 @@
                 </li>
                 <li class=" nav-item"><a href="solicitudConsumo.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Solicitud consumo (96)</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Invoice">Stock</span></a>
-                    <ul class="menu-content">
-                        <li><a href="almacen.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18ns="Invoice List">Almacen</span></a>
-                        </li>
-                        <li><a href="consumo.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18ns="Invoice">Consumo</span></a>
-                        </li>
-                    </ul>
-                </li>
                 <li class=" navigation-header"><span>Forms &amp; Tables</span>
                 </li>
-                <li class=" nav-item"><a href="inventario.html"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
+                <li class=" nav-item"><a href="articulo.html"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Articulo</span></a>
                 </li>
                 <li class=" nav-item"><a href="categoria.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Categoria</span></a>
                 </li>
-                <li class=" nav-item"><a href="provedores.html"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Almacen</span></a>
+                <li class=" nav-item"><a href="provedores.html"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Provedores</span></a>
+                </li>
+                <li class=" nav-item"><a href="inventario.html"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
                 </li>
             </ul>
         </div>
@@ -113,6 +132,7 @@
     <div class="app-content content">
         <div class="content-overlay"></div>
         <div class="content-wrapper">
+
             <div class="content-header row">
                 <div class="content-header-left col-12 mb-2 mt-1">
                     <div class="row breadcrumbs-top">
@@ -122,7 +142,7 @@
                                 <ol class="breadcrumb p-0 mb-0">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="bx bx-home-alt"></i></a>
                                     </li>
-                                    <li class="breadcrumb-item active">Registro Inventario
+                                    <li class="breadcrumb-item active">Stock Inventario
                                     </li>
                                 </ol>
                             </div>
@@ -131,265 +151,301 @@
                 </div>
             </div>
 
-            <!-- vertical Wizard start-->
-            <section id="vertical-wizard">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Registro Inventario</h4>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            <form action="#" class="wizard-vertical">
-                                <!-- step 1 -->
-                                <h3>
-                                    <span class="fonticon-wrap mr-1">
-                                        <i class="step-icon"></i>
-                                    </span>
-                                    <span class="icon-title">
-                                        <span class="d-block">Categoria</span>
-                                        <small class="text-muted">Asignación de categoria al inventario.</small>
-                                    </span>
-                                </h3>
-                                <!-- step 1 end-->
-                                <!-- step 1 content -->
-                                <fieldset class="pt-0">
-                                    <h6 class="pb-50" align="center">Asignacion de Categoria</h6><br>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>Agencia Inventario</label>
-                                                <select name="delivery" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="overnight">01 - Central</option>
-                                                    <option value="express">02 - Sucursal</option>
-                                                    <option value="basic">03 - Puestito</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="eventLocation12">Código Almacen</label>
-                                                <select name="preferreddelivery" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="morning">Almacen General</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label>Grupo de Articulos</label>
-                                                <select name="packaging" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="regular">Material de Escritorio</option>
-                                                    <option value="oversized">Material de Limpieza</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div><br>
-                                </fieldset>
-                                <!-- step 1 content end-->
-                                <!-- step 2 -->
-                                <h3>
-                                    <span class="fonticon-wrap mr-1">
-                                        <i class="step-icon"></i>
-                                    </span>
-                                    <span class="icon-title">
-                                        <span class="d-block">Inventario</span>
-                                        <small class="text-muted">Código, Orden y observacion.</small>
-                                    </span>
-                                </h3>
-                                <!-- step 2 end-->
-                                <!-- step 2 content -->
-                                <fieldset class="pt-0">
-                                    <h6 class="py-50" align="center">Código y numero de Orden</h6>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="proposalTitle1">Código Articulo</label>
-                                                <input type="text" class="form-control" id="proposalTitle1" disabled placeholder="CCCT-OC-01-C-ART">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>C.A.</label>
-                                                <input type="text" class="form-control" disabled placeholder="000001">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>Número de Orden</label>
-                                                <input type="text" class="form-control" placeholder="Escriba el numero de orden">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>Obcervacion Articulo</label>
-                                                <input type="text" class="form-control" placeholder="Obcervacion">
-                                                <small class="form-text text-muted">Detalle lo mas claro posible la observacion del articulo..</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <!-- step 2 content end-->
-                                <!-- section 3 -->
-                                <h3>
-                                    <span class="fonticon-wrap mr-1">
-                                        <i class="step-icon"></i>
-                                    </span>
-                                    <span class="icon-title">
-                                        <span class="d-block">Datos Producto</span>
-                                        <small class="text-muted">Descripcion del producto.</small>
-                                    </span>
-                                </h3>
-                                <!-- section 3 end-->
-                                <!-- step 3 content -->
-                                <fieldset class="pt-0">
-                                    <h6 class="py-50" align="center">Detalle del producto</h6>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="eventName13">Descripcion del producto</label>
-                                                <input type="text" class="form-control" id="eventName13" placeholder="Ingrese la descripcion del producto">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label>Precio Unitario</label>
-                                                <input type="number" class="form-control" name="ccmonth" placeholder="Bolivianos" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label>Precio Ponderado</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder="Ponderado" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label>Cantidad Aticulo</label>
-                                                <input type="text" class="form-control" name="ccyear" placeholder="¿Cuantos articulos?" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label>Saldo de la cantidad</label>
-                                                <input type="number" class="form-control" name="ccmonth" placeholder="Saldo de la cantidad" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Stock Minimo</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder=" Ejemplo: 20" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Stock MAximo</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Total Costo Articulo</label>
-                                                <input type="number" class="form-control" name="ccmonth" placeholder="Ejemplo: 100" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Saldo costo Articulo</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Unidad Articulo</label>
-                                                <select name="packaging" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="regular">01 - Piezas</option>
-                                                    <option value="oversized">02 - Resma</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Tipo Ingreso</label>
-                                                <select name="packaging" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="regular">01 - Compra de articulos</option>
-                                                    <option value="oversized">02 - Compra de algo</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <!-- step 3 content end-->
-                                <!-- step 4 -->
-                                <h3>
-                                    <span class="fonticon-wrap mr-1">
-                                        <i class="step-icon"></i>
-                                    </span>
-                                    <span class="icon-title">
-                                        <span class="d-block">Terminos y condiciones</span>
-                                        <small class="text-muted">Terminos y condiciones.</small>
-                                    </span>
-                                </h3>
-                                <!-- step 4 end-->
-                                <!-- step 4 content -->
-                                <fieldset>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h6 class="py-50" align="center">Terminos y condiciones</h6>
-                                        </div>
-                                        <div class="col-12">
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum culpa repellendus laborum maxime
-                                                dignissimos dolor excepturi iusto nemo aspernatur? Qui modi inventore reprehenderit, nostrum
-                                                quaerat libero maiores consequuntur illo veritatis.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit omnis, doloribus autem,
-                                                non quam quibusdam harum accusamus voluptatem in perspiciatis consequuntur sint nam debitis
-                                                sapiente ex, optio totam delectus quis.
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis placeat in quisquam dolorum
-                                                numquam, rerum expedita corporis eveniet quas nostrum, quia veritatis neque quos sint sit
-                                                exercitationem obcaecati perferendis magnam!
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam consequatur laudantium
-                                                voluptatibus impedit unde. Error eius consequuntur tenetur unde molestias esse doloribus animi,
-                                                temporibus placeat eaque laborum, maiores, ex quo!
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, suscipit placeat accusamus
-                                                voluptas odio est ea accusantium dignissimos et officia, cupiditate aperiam atque facilis?
-                                                Adipisci earum fuga illo odit reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Asperiores nihil necessitatibus sequi placeat tenetur, perspiciatis, excepturi dolor, consectetur
-                                                assumenda amet accusantium velit fuga numquam tempore repellendus voluptatem vitae. Voluptatem,
-                                                hic.
-                                            </p>
-                                            <strong>Lea todos los términos y condiciones cuidadosamente..</strong>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <div class="radio">
-                                                    <input type="radio" name="bsradio" id="agree" checked >
-                                                    <label for="agree" class="text-success">Lei todos los términos y condiciones y estoy de acuerdo.</label>
-                                                </div>
-                                                <div class="radio">
-                                                    <input type="radio" name="bsradio" id="disagree">
-                                                    <label for="disagree" class="text-danger">No estoy de acuerdo con eso.</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <!-- step 4 content end-->
-                            </form>
+
+        <!-- Column selectors with Export Options and print table -->
+        <!-- <section id="column-selectors">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header "><br><br>
+                            <h4 class="card-title">Inventario de articulos registrados</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body card-dashboard">
+                                <p class="card-text text-center">Lista de todos los articulos registrados con el stock minimo para la accion necesaria de abastecimiento o eliminacion.
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-striped dataex-html5-selectors"> -->
+
+                <section id="basic-datatable">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header text-center"><br>
+                                    <h4 class="card-title">Inventario de articulos registrados</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body card-dashboard">
+                                        <p class="card-text text-center">Lista de todos los articulos registrados con el stock minimo para la accion necesaria de abastecimiento o eliminacion.
+                                        </p>
+                                        <div class="table-responsive">
+                                            <table class="table zero-configuration">                            
+
+
+                                        <thead>
+                                            <tr>
+                                                <th>Articulo</th>
+                                                <th>Categoria</th>
+                                                <th>Agencia</th>
+                                                <th>Stock Minimo</th>
+                                                <th>Cantidad Inventario</th>
+                                                <th>Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Garrett Winters</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ashton Cox</td>
+                                                <td>Junior Technical Author</td>
+                                                <td>San Francisco</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Airi Satou</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brielle Williamson</td>
+                                                <td>Integration Specialist</td>
+                                                <td>New York</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Herrod Chandler</td>
+                                                <td>Sales Assistant</td>
+                                                <td>San Francisco</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rhona Davidson</td>
+                                                <td>Integration Specialist</td>
+                                                <td>Tokyo</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Colleen Hurst</td>
+                                                <td>Javascript Developer</td>
+                                                <td>San Francisco</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sonya Frost</td>
+                                                <td>Software Engineer</td>
+                                                <td>Edinburgh</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jena Gaines</td>
+                                                <td>Office Manager</td>
+                                                <td>London</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quinn Flynn</td>
+                                                <td>Support Lead</td>
+                                                <td>Edinburgh</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Charde Marshall</td>
+                                                <td>Regional Director</td>
+                                                <td>San Francisco</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Haley Kennedy</td>
+                                                <td>Senior Marketing Designer</td>
+                                                <td>London</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tatyana Fitzpatrick</td>
+                                                <td>Regional Director</td>
+                                                <td>London</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Michael Silva</td>
+                                                <td>Marketing Designer</td>
+                                                <td>London</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Paul Byrd</td>
+                                                <td>Chief Financial Officer (CFO)</td>
+                                                <td>New York</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            <tr>
+                                                <td>Gloria Little</td>
+                                                <td>Systems Administrator</td>
+                                                <td>New York</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bradley Greer</td>
+                                                <td>Software Engineer</td>
+                                                <td>London</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dai Rios</td>
+                                                <td>Personnel Lead</td>
+                                                <td>Edinburgh</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Thor Walton</td>
+                                                <td>Developer</td>
+                                                <td>New York</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Finn Camacho</td>
+                                                <td>Support Engineer</td>
+                                                <td>San Francisco</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Serge Baldwin</td>
+                                                <td>Data Coordinator</td>
+                                                <td>Singapore</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Zenaida Frank</td>
+                                                <td>Software Engineer</td>
+                                                <td>New York</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Shad Decker</td>
+                                                <td>Regional Director</td>
+                                                <td>Edinburgh</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Michael Bruce</td>
+                                                <td>Javascript Developer</td>
+                                                <td>Singapore</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Donna Snider</td>
+                                                <td>Customer Support</td>
+                                                <td>New York</td>
+                                                <td>50</td>
+                                                <td>420</td>
+                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
+                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- vertical Wizard end-->
-
-
+            </div>
+        </section>
+        <!-- Column selectors with Export Options and print table -->
         </div>
     </div>
 
@@ -430,6 +486,44 @@
 
     <!-- BEGIN: Page JS-->
     <script src="../../../app-assets/js/scripts/forms/wizard-steps.js"></script>
+    <!-- END: Page JS-->
+
+
+
+
+
+
+
+
+
+    
+    <!-- BEGIN: Vendor JS-->
+    <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
+    <script src="../../../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="../../../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="../../../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="../../../app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="../../../app-assets/js/core/app-menu.js"></script>
+    <script src="../../../app-assets/js/core/app.js"></script>
+    <script src="../../../app-assets/js/scripts/components.js"></script>
+    <script src="../../../app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="../../../app-assets/js/scripts/datatables/datatable.js"></script>
     <!-- END: Page JS-->
 
 </body>

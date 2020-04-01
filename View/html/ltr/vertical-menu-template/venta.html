@@ -58,7 +58,7 @@
                                 <div class="user-nav d-sm-flex d-none"><span class="user-name">Ronald Vega</span><span class="user-status text-muted">Adminstrador</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/7.png" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="auth-login.html"><i class="bx bx-power-off mr-50"></i> Salir</a>
+                                <a class="dropdown-item" href="../../../index.html"><i class="bx bx-power-off mr-50"></i> Salir</a>
                             </div>
                         </li>
                     </ul>
@@ -89,21 +89,15 @@
                 </li>
                 <li class=" nav-item"><a href="solicitudConsumo.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Solicitud consumo (96)</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Invoice">Stock</span></a>
-                    <ul class="menu-content">
-                        <li><a href="almacen.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18ns="Invoice List">Almacen</span></a>
-                        </li>
-                        <li><a href="consumo.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18ns="Invoice">Consumo</span></a>
-                        </li>
-                    </ul>
-                </li>
                 <li class=" navigation-header"><span>Forms &amp; Tables</span>
                 </li>
-                <li class=" nav-item"><a href="inventario.html"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
+                <li class=" nav-item"><a href="articulo.html"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Articulo</span></a>
                 </li>
                 <li class=" nav-item"><a href="categoria.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Categoria</span></a>
                 </li>
-                <li class=" nav-item"><a href="provedores.html"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Almacen</span></a>
+                <li class=" nav-item"><a href="provedores.html"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Provedores</span></a>
+                </li>
+                <li class=" nav-item"><a href="inventario.html"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
                 </li>
             </ul>
         </div>
@@ -121,6 +115,8 @@
                 <section class="invoice-edit-wrapper">
                     <div class="row">
                         <!-- invoice view page -->
+                        
+                        <div class="col-xl-1 col-md-8 col-12" ></div>
                         <div class="col-xl-9 col-md-8 col-12" >
                             <div class="card invoice-print-area">
                                 <div class="card-content">
@@ -137,7 +133,7 @@
                                         <hr>
                                         <!-- invoice address and contact -->
                                         <div class="row invoice-info">
-                                            <div class="col-lg-9 col-md-12 mt-25">
+                                            <div class="col-lg-12 col-md-12 mt-25">
                                                 <fieldset class="invoice-address form-group">
                                                     <div class="invoice-item-filed row pt-1 px-1">
                                                         <div class="col-12 col-md-4 form-group">
@@ -166,14 +162,6 @@
                                                     <textarea class="form-control" rows="4" placeholder="Global Consumo"></textarea>
                                                 </fieldset>
                                             </div>
-                                            <div class="col-lg-3 col-md-12 mt-25">
-                                                <img src="../../../app-assets/images/pages/qr5.png" alt="logo" height="200" width="215">
-                                                <div class="invoice-action-btn mb-1">
-                                                    <button class="btn btn-warning btn-block">
-                                                        <span>Generar QU</span>
-                                                    </button>
-                                                </div>
-                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -201,7 +189,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-md-3 col-12 form-group">
-                                                                    <input type="text" class="form-control" placeholder="0">
+                                                                    <input type="text" class="form-control" placeholder="0" disabled>
                                                                 </div>
                                                                 <div class="col-md-3 col-12 form-group">
                                                                     <input type="text" class="form-control" placeholder="0">
@@ -235,10 +223,12 @@
                                         <hr>
                                         <div class="invoice-subtotal pt-50">
                                             <div class="row">
+                                                <div class="col-md-1 col-12"><br><br><br>
+                                                    <img src="../../../app-assets/images/pages/qr5.png" alt="logo" height="150" width="164">
+                                                </div>
                                                 <div class="col-md-1 col-12">
                                                 </div>
-                                                <div class="col-md-4 col-12"><br><br><br>
-                                                    <p align="center"><i class="bx bx-phone-call primary font-large-1 text-muted p-50"></i></p>
+                                                <div class="col-md-3 col-12"><br><br><br><br>   <br>
                                                     <h5 align="center">+ (591) 6550***9</h5>
                                                     <p align="center" class="text-muted font-medium-1">Siempre estamos felices de ayudar!</p>
                                                 </div>
@@ -270,9 +260,9 @@
                                                         <li class="list-group-item d-flex justify-content-between border-0 pb-0">
                                                             <span class="invoice-subtotal-title">Balance (USD)</span>
                                                             <h6 class="invoice-subtotal-value mb-0">$ 000</h6>
-                                                        </li>
+                                                        </li><br>
                                                         <li class="list-group-item border-0 pb-0">
-                                                            <button class="btn btn-primary btn-block subtotal-preview-btn"><a href="venta.html" style="color: blanchedalmond;">Vista Previa</a></button>
+                                                            <button class="btn btn-primary btn-block subtotal-preview-btn"><a href="factura.html" style="color: #ffffff;">Aceptar</a></button>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -283,77 +273,7 @@
                             </div>
                         </div>
                         <!-- invoice action  -->
-                        <div class="col-xl-3 col-md-4 col-12">
-                            <div class="card invoice-action-wrapper shadow-none border">
-                                <div class="card-body">
-                                    <div class="invoice-action-btn mb-1">
-                                        <button class="btn btn-primary btn-block btn-block invoice-print">
-                                            <i class="bx bx-send"></i>
-                                            <span><a href="venta.html" style="color: #ffffff;">Generar Factura</a></span>
-                                        </button>
-                                    </div>
-                                    <div class="invoice-action-btn mb-1">
-                                        <button class="btn btn-light-primary btn-block">
-                                            <span>Descargar Factura</span>
-                                        </button>
-                                    </div>
-                                    <div class="invoice-action-btn mb-1 d-flex">
-                                        <div class="preview w-50 mr-50">
-                                            <button class="btn btn-light-primary btn-block">
-                                                <span class="text-nowrap">Cancelar</span>
-                                            </button>
-                                        </div>
-                                        <div class="save w-50">
-                                            <button class="btn btn-light-primary btn-block">
-                                                <span class="text-nowrap">Guardar</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="invoice-action-btn mb-1">
-                                        <button class="btn btn-success btn-block">
-                                            <i class='bx bx-dollar'></i>
-                                            <span>Agregar Pago</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="invoice-payment">
-                                <div class="invoice-payment-option mb-2">
-                                    <p>Aceptar pagos a través de</p>
-                                    <select name="payment" id="paymentOption" class="form-control bg-transparent">
-                                        <option value="DebitCard">Targetas debito</option>
-                                        <option value="DebitCard">Targeta credito</option>
-                                        <option value="DebitCard">Paypal</option>
-                                    </select>
-                                </div>
-                                <div class="invoice-terms">
-                                    <div class="d-flex justify-content-between py-50">
-                                        <span class="invoice-terms-title">Terminos de pago</span>
-                                        <div class="custom-control custom-switch custom-switch-glow">
-                                            <input type="checkbox" class="custom-control-input" checked id="paymentTerm">
-                                            <label class="custom-control-label" for="paymentTerm">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between py-50">
-                                        <span class="invoice-terms-title">Notas del cliente</span>
-                                        <div class="custom-control custom-switch custom-switch-glow">
-                                            <input type="checkbox" class="custom-control-input" checked id="clientNote">
-                                            <label class="custom-control-label" for="clientNote">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between py-50">
-                                        <span class="invoice-terms-title">Talon de pago</span>
-                                        <div class="custom-control custom-switch custom-switch-glow">
-                                            <input type="checkbox" class="custom-control-input" id="paymentstub">
-                                            <label class="custom-control-label" for="paymentstub">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
+                        
                     </div>
                 </section>
 

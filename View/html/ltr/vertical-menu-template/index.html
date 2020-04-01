@@ -58,7 +58,7 @@
                                 <div class="user-nav d-sm-flex d-none"><span class="user-name">Ronald Vega</span><span class="user-status text-muted">Adminstrador</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/7.png" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="auth-login.html"><i class="bx bx-power-off mr-50"></i> Salir</a>
+                                <a class="dropdown-item" href="../../../index.html"><i class="bx bx-power-off mr-50"></i> Salir</a>
                             </div>
                         </li>
                     </ul>
@@ -89,21 +89,15 @@
                 </li>
                 <li class=" nav-item"><a href="solicitudConsumo.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Solicitud consumo (96)</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Invoice">Stock</span></a>
-                    <ul class="menu-content">
-                        <li><a href="almacen.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18ns="Invoice List">Almacen</span></a>
-                        </li>
-                        <li><a href="consumo.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18ns="Invoice">Consumo</span></a>
-                        </li>
-                    </ul>
-                </li>
                 <li class=" navigation-header"><span>Forms &amp; Tables</span>
                 </li>
-                <li class=" nav-item"><a href="inventario.html"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
+                <li class=" nav-item"><a href="articulo.html"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Articulo</span></a>
                 </li>
                 <li class=" nav-item"><a href="categoria.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Categoria</span></a>
                 </li>
                 <li class=" nav-item"><a href="provedores.html"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Provedores</span></a>
+                </li>
+                <li class=" nav-item"><a href="inventario.html"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
                 </li>
             </ul>
         </div>
@@ -131,9 +125,9 @@
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-end">
                                             <div class="dashboard-content-left">
-                                                <h1 class="text-primary font-large-2 text-bold-500">$89k</h1>
+                                                <h1 class="text-primary font-large-2 text-bold-500">$89</h1>
                                                 <p>La conexion a la BD fue exitosa.</p>
-                                                <button type="button" class="btn btn-primary glow">View Sales</button>
+                                                <button type="button" class="btn btn-primary glow">Ver Detalles</button>
                                             </div>
                                             <div class="dashboard-content-right">
                                                 <img src="../../../app-assets/images/icon/cup.png" height="220" width="220" class="img-fluid" alt="Dashboard Ecommerce" />
@@ -147,16 +141,16 @@
                         <div class="col-xl-4 col-md-6 col-12 dashboard-visit">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4 class="card-title">Visits of 2019</h4>
+                                    <h4 class="card-title">Porcentaje de 2020</h4>
                                     <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div id="multi-radial-chart"></div>
                                         <ul class="list-inline d-flex justify-content-around mb-0">
-                                            <li> <span class="bullet bullet-xs bullet-primary mr-50"></span>Target</li>
-                                            <li> <span class="bullet bullet-xs bullet-danger mr-50"></span>Mart</li>
-                                            <li> <span class="bullet bullet-xs bullet-warning mr-50"></span>Ebay</li>
+                                            <li> <span class="bullet bullet-xs bullet-primary mr-50"></span>Normal</li>
+                                            <li> <span class="bullet bullet-xs bullet-danger mr-50"></span>Stock Minimo</li>
+                                            <li> <span class="bullet bullet-xs bullet-warning mr-50"></span>Stock Maximo</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -174,8 +168,8 @@
                                                         <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto mb-50">
                                                             <i class="bx bx-briefcase-alt font-medium-5"></i>
                                                         </div>
-                                                        <div class="text-muted line-ellipsis">New Products</div>
-                                                        <h3 class="mb-0">1.2k</h3>
+                                                        <div class="text-muted line-ellipsis">Categoria</div>
+                                                        <h3 class="mb-0">105</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -187,8 +181,8 @@
                                                         <div class="badge-circle badge-circle-lg badge-circle-light-danger mx-auto mb-50">
                                                             <i class="bx bx-user font-medium-5"></i>
                                                         </div>
-                                                        <div class="text-muted line-ellipsis">New Users</div>
-                                                        <h3 class="mb-0">45.6k</h3>
+                                                        <div class="text-muted line-ellipsis">Usuarios</div>
+                                                        <h3 class="mb-0">5</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,7 +190,7 @@
                                         <div class="col-xl-12 col-lg-6 col-12 dashboard-revenue-growth">
                                             <div class="card">
                                                 <div class="card-header d-flex justify-content-between align-items-center pb-0">
-                                                    <h4 class="card-title">Revenue Growth</h4>
+                                                    <h4 class="card-title">Rendimiento semanal</h4>
                                                     <div class="d-flex align-items-end justify-content-end">
                                                         <span class="mr-25">$25,980</span>
                                                         <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
@@ -223,10 +217,10 @@
                                     <div class="col-md-8 col-12 order-summary border-right pr-md-0">
                                         <div class="card mb-0">
                                             <div class="card-header d-flex justify-content-between align-items-center">
-                                                <h4 class="card-title">Order Summary</h4>
+                                                <h4 class="card-title">Avance</h4>
                                                 <div class="d-flex">
-                                                    <button type="button" class="btn btn-sm btn-light-primary mr-1">Month</button>
-                                                    <button type="button" class="btn btn-sm btn-primary glow">Week</button>
+                                                    <button type="button" class="btn btn-sm btn-light-primary mr-1">Mensual</button>
+                                                    <button type="button" class="btn btn-sm btn-primary glow">Semanal</button>
                                                 </div>
                                             </div>
                                             <div class="card-content">
@@ -240,13 +234,13 @@
                                     <div class="col-md-4 col-12 pl-md-0">
                                         <div class="card mb-0">
                                             <div class="card-header pb-50">
-                                                <h4 class="card-title">Sales History</h4>
+                                                <h4 class="card-title">Salidas</h4>
                                             </div>
                                             <div class="card-content">
                                                 <div class="card-body py-1">
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div class="sales-item-name">
-                                                            <p class="mb-0">Airpods</p>
+                                                            <p class="mb-0">Provedores</p>
                                                             <small class="text-muted">30 min ago</small>
                                                         </div>
                                                         <div class="sales-item-amount">
@@ -255,7 +249,7 @@
                                                     </div>
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div class="sales-item-name">
-                                                            <p class="mb-0">iPhone</p>
+                                                            <p class="mb-0">Entradas</p>
                                                             <small class="text-muted">2 hour ago</small>
                                                         </div>
                                                         <div class="sales-item-amount">
@@ -264,7 +258,7 @@
                                                     </div>
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="sales-item-name">
-                                                            <p class="mb-0">Macbook</p>
+                                                            <p class="mb-0">Salidas</p>
                                                             <small class="text-muted">1 day ago</small>
                                                         </div>
                                                         <div class="sales-item-amount">
@@ -273,7 +267,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-footer border-top pb-0">
-                                                    <h5>Total Sales</h5>
+                                                    <h5>Total </h5>
                                                     <span class="text-primary text-bold-500">$82,950.96</span>
                                                     <div class="progress progress-bar-primary progress-sm my-50">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="78" style="width:78%"></div>
@@ -289,7 +283,7 @@
                         <div class="col-xl-4 col-md-6 col-12 dashboard-latest-update">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center pb-50">
-                                    <h4 class="card-title">Latest Update</h4>
+                                    <h4 class="card-title">Datos Modificados</h4>
                                     <div class="dropdown">
                                         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButtonSec" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             2019
@@ -314,8 +308,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="list-content">
-                                                        <span class="list-title">Total Products</span>
-                                                        <small class="text-muted d-block">1.2k New Products</small>
+                                                        <span class="list-title">Total Productos</span>
+                                                        <small class="text-muted d-block">1.2k Nuevo Productos</small>
                                                     </div>
                                                 </div>
                                                 <span>10.6k</span>
@@ -330,8 +324,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="list-content">
-                                                        <span class="list-title">Total Sales</span>
-                                                        <small class="text-muted d-block">39.4k New Sales</small>
+                                                        <span class="list-title">Total ventas</span>
+                                                        <small class="text-muted d-block">39.4k Nueva Venta</small>
                                                     </div>
                                                 </div>
                                                 <span>26M</span>
