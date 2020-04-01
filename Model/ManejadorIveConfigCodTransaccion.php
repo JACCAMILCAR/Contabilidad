@@ -15,16 +15,16 @@ class ManejadorIveConfigCodTransaccion
 			$sqlInsertarIveConfigCodTransaccion = " INSERT INTO IveConfigCodTransaccion(codTransaccion,codSucursal,descCodTransaccion,tipoCodTransaccion,conAsientos,enviado) 
 			VALUES (:codTransaccion,:codSucursal,:descCodTransaccion,:tipoCodTransaccion,:conAsientos,:enviado); ";
 				
-			$codTransaccion = $objetoIveGrupoAlmacen->getcodTransaccion();
-			$codSucursal = $objetoIveGrupoAlmacen->getcodSucursal();
-			$descCodTransaccion = $objetoIveGrupoAlmacen->getdescCodTransaccion();
-			$tipoCodTransaccion = $objetoIveGrupoAlmacen->gettipoCodTransaccion();
-			$conAsientos = $objetoIveGrupoAlmacen->getconAsientos();
-			$enviado = $objetoIveGrupoAlmacen->getenviado();
+			$codTransaccion = $objetoIveConfigCodTransaccion->getcodTransaccion();
+			$codSucursal = $objetoIveConfigCodTransaccion->getcodSucursal();
+			$descCodTransaccion = $objetoIveConfigCodTransaccion->getdescCodTransaccion();
+			$tipoCodTransaccion = $objetoIveConfigCodTransaccion->gettipoCodTransaccion();
+			$conAsientos = $objetoIveConfigCodTransaccion->getconAsientos();
+			$enviado = $objetoIveConfigCodTransaccion->getenviado();
 				
                     	
 			try{
-			$cmd = $this->conexion->prepare($sqlInsertarIveGrupoAlmacen);
+			$cmd = $this->conexion->prepare($sqlInsertarIveConfigCodTransaccion);
 			$cmd->bindParam(':codTransaccion', $codTransaccion);
 			$cmd->bindParam(':codSucursal', $codSucursal);
 			$cmd->bindParam(':descCodTransaccion', $descCodTransaccion);
@@ -54,14 +54,14 @@ class ManejadorIveConfigCodTransaccion
 											WHERE codTransaccion = :codTransaccion ;
 										";
 									
-            $codTransaccion = $objetoIveGrupoAlmacen->getcodTransaccion();
-			$codSucursal = $objetoIveGrupoAlmacen->getcodSucursal();
-			$descCodTransaccion = $objetoIveGrupoAlmacen->getdescCodTransaccion();
-			$tipoCodTransaccion = $objetoIveGrupoAlmacen->gettipoCodTransaccion();
-			$conAsientos = $objetoIveGrupoAlmacen->getconAsientos();
-			$enviado = $objetoIveGrupoAlmacen->getenviado();
+            $codTransaccion = $objetoIveConfigCodTransaccion->getcodTransaccion();
+			$codSucursal = $objetoIveConfigCodTransaccion->getcodSucursal();
+			$descCodTransaccion = $objetoIveConfigCodTransaccion->getdescCodTransaccion();
+			$tipoCodTransaccion = $objetoIveConfigCodTransaccion->gettipoCodTransaccion();
+			$conAsientos = $objetoIveConfigCodTransaccion->getconAsientos();
+			$enviado = $objetoIveConfigCodTransaccion->getenviado();
 			try{
-			$cmd = $this->conexion->prepare($sqlActualizarIveGrupoAlmacen);
+			$cmd = $this->conexion->prepare($sqlActualizarIveConfigCodTransaccion);
            $cmd->bindParam(':codTransaccion', $codTransaccion);
 			$cmd->bindParam(':codSucursal', $codSucursal);
 			$cmd->bindParam(':descCodTransaccion', $descCodTransaccion);
@@ -81,7 +81,7 @@ class ManejadorIveConfigCodTransaccion
 			$sqlEliminarIveConfigCodTransaccion = " DELETE FROM IveConfigCodTransaccion WHERE codTransaccion = :codTransaccion ; ";
 
 			try{
-					$cmd = $this->conexion->prepare($sqlEliminarIveGrupoAlmacen);
+					$cmd = $this->conexion->prepare($sqlEliminarIveConfigCodTransaccion);
 					$cmd->bindParam(':codTransaccion', $codTransaccion);
 					$cmd->execute();
 					return 1;

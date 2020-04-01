@@ -220,7 +220,7 @@ FOREIGN KEY (codSucursal) REFERENCES Sucursal (codSucursal)
 );
  create table IveTransaccionArticulo
  (
-codeTransArticulo SERIAL PRIMARY KEY,
+codTransArticulo SERIAL PRIMARY KEY,
 codSucursal INTEGER,
 codUnidad INTEGER,
 codMoneda INTEGER,

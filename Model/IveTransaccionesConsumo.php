@@ -8,6 +8,7 @@
         public $cuentaSolicitud;
         public $cantidadAprobadaConsumo;
         public $fechaAprobadaConsumo;
+        public $horaTransConsumo;
         public $glosaTransConsumo;
         public $cantidadTransConsumo;
         public $estado;
@@ -25,6 +26,7 @@
         public function setcuentaSolicitud($cuentaSolicitud){$this->cuentaSolicitud = $cuentaSolicitud;}
         public function setcantidadAprobadaConsumo($cantidadAprobadaConsumo){$this->cantidadAprobadaConsumo = $cantidadAprobadaConsumo;}
         public function setfechaAprobadaConsumo($fechaAprobadaConsumo){$this->fechaAprobadaConsumo = $fechaAprobadaConsumo;}
+        public function sethoraTransConsumo($horaTransConsumo){$this->horaTransConsumo = $horaTransConsumo;}
         public function setglosaTransConsumo($glosaTransConsumo){$this->glosaTransConsumo = $glosaTransConsumo;}
         public function setcantidadTransConsumo($cantidadTransConsumo){$this->cantidadTransConsumo = $cantidadTransConsumo;}
         public function setestado($estado){$this->estado = $estado;}
@@ -40,8 +42,10 @@
         public function getcuentaSolicitud(){return $this->codSolicitud;}
         public function getcantidadAprobadaConsumo(){return $this->cantidadAprobadaConsumo;}
         public function getfechaAprobadaConsumo(){return $this->fechaAprobadaConsumo;}
+        public function gethoraTransConsumo(){return $this->horaTransConsumo;}
         public function getglosaTransConsumo(){return $this->glosaTransConsumo;}
         public function getcantidadTransConsumo(){return $this->cantidadTransConsumo;}
+        public function getestado(){return $this->estado;}
         public function getanulado(){return $this->anulado;}
         public function getusuarioRegistro(){return $this->usuarioRegistro;}
         public function getusuarioConsumo(){return $this->usuarioConsumo;}        
