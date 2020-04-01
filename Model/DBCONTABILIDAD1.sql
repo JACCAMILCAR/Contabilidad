@@ -248,15 +248,15 @@ FOREIGN KEY (codArticulo) REFERENCES IveArticulo (codArticulo)
 
  );
 
-create table IveConfigPrelimanares
+create table IveConfigPreliminares
 (
-    codePreliminares SERIAL PRIMARY KEY,
+    codPreliminares SERIAL PRIMARY KEY,
     codSucursal INTEGER,
     tipoCodigo char(1),
     formaCodigo char (1),
     longitudCodigo varchar (60),
-    AplicacionCodigo varchar (60),
-    MascaraCodigo varchar (60),
+    aplicacionCodigo varchar (60),
+    mascaraCodigo varchar (60),
     enviado char (1),
     FOREIGN KEY (codSucursal) REFERENCES Sucursal (codSucursal)
 
