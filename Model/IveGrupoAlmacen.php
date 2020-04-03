@@ -1,6 +1,6 @@
 <?php
 
-    class IveGrupoAlamacen
+    class IveGrupoAlmacen
     {
         public $codGrupoAlmacen;
         public $codSucursal;

@@ -1,46 +1,37 @@
 <?php
- 	class Conexion
-	{
-		private static $conexion;
-		
-		public static function abrirConexion()
-		{
-			if(!isset(self::$conexion))
-			{
-				try{
-					include_once './conf.php';
-					self::$conexion = new PDO('pgsql:host='.Nombre_Servidor.'; dbname='.BASE_DE_DATOS,NOMBRE_USUARIO,PASSWORD);
-					//self::$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ATTR_EXCEPTION);
-					self::$conexion->exec("SET NAMES 'utf8'");
+/**
+ *
+ */
+class Conexion extends PDO
+{
+  private $host;
+  private $user;
+  private $pass;
+  private $bd;
+  private $engine;
+  function __construct()
+  {
+    $this->host = "localhost";
+    $this->user = "root";
+    $this->pass = "";
+    $this->bd = "Contabilidad";
+    $this->engine = "mysql";
 
-				}
+  }
+  function conectar()
+  {
+    try
+    {
+      $conexion = new PDO($this->engine.':host='.$this->host.';dbname='.$this->bd,$this->user, $this->pass);
+      // echo "exito en la conexion";
+      return $conexion;
+    }
+    catch (\Exception $e) {
+      echo "error al conectar";
+    }
 
-				catch(PDOException $ex){
-					print "ERROR". $ex->getMessage()."<br>";
-
-				}
-			}
-		}
-		public static function cerrarCorrecion()
-		{
-			if(isset(self::$conexion))
-			{
-				self::$conexion =null;
-			}
-
-		}
-	   public static function obtenerConexion()
-	   {
-		if(isset(self::$conexion))
-		{
-			echo "Conexion Establecida";
-		}
-		else
-		{
-			echo "No se pudo conectar con la base de datos";
-		}
-	   }
-	}
-	conexion::abrirConexion();
-	conexion::obtenerConexion();
- ?>
+  }
+}
+// $prueba = new Conexion();
+// $prueba->conectar();
+?>

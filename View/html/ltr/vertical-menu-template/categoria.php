@@ -83,19 +83,21 @@
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
                 <li class=" navigation-header"><span>GENERAL</span>
                 </li>
-                <li class=" nav-item"><a href="../../../html/ltr/vertical-menu-template/index.html"><i class="menu-livicon" data-icon="desktop"></i><span class="menu-title" data-i18ns="Dashboard">Tablero</span></a>
+                <li class=" nav-item"><a href="index.html"><i class="menu-livicon" data-icon="desktop"></i><span class="menu-title" data-i18ns="Dashboard">Tablero</span></a>
                 </li>
-                <li class=" nav-item"><a href="solicitudConsumo.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Solicitud consumo (96)</span></a>
+                <li class=" nav-item"><a href="solicitudConsumo.php"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Solicitud consumo (96)</span></a>
                 </li>
                 <li class=" navigation-header"><span>Forms &amp; Tables</span>
                 </li>
-                <li class=" nav-item"><a href="articulo.html"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Articulo</span></a>
+                <li class=" nav-item"><a href="articulo.php"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Articulo</span></a>
                 </li>
-                <li class=" nav-item"><a href="categoria.html"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Categoria</span></a>
+                <li class=" nav-item"><a href="categoria.php"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Categoria</span></a>
                 </li>
-                <li class=" nav-item"><a href="provedores.html"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Provedores</span></a>
+                <li class=" nav-item"><a href="provedores.php"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Provedores</span></a>
                 </li>
-                <li class=" nav-item"><a href="inventario.html"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
+                <li class=" nav-item"><a href="inventario.php"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
+                </li>
+                <li class=" nav-item"><a href="reporte.php"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Reporte</span></a>
                 </li>
             </ul>
         </div>
@@ -111,7 +113,7 @@
                 <div class="content-header-left col-12 mb-2 mt-1">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h5 class="content-header-title float-left pr-1 mb-0">Inventario</h5>
+                            <h5 class="content-header-title float-left pr-1 mb-0">Categoria</h5>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb p-0 mb-0">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="bx bx-home-alt"></i></a>
@@ -125,252 +127,123 @@
                 </div>
             </div>
 
-             <!-- Form wizard with icon tabs section start -->
-             <section id="icon-tabs">
+             <!-- Form wizard with step validation section start -->
+             <section id="validation">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Registro Categoria</h4>
+                            <div class="card-header pb-0">
+                                <h4 class="card-title">Formulario de categoria</h4>
                             </div>
-                            <div class="card-content mt-2">
+                            <div class="card-content">
                                 <div class="card-body">
-                                    <form action="#" class="wizard-horizontal">
+                                    <form action="#" class="wizard-validation">
                                         <!-- Step 1 -->
                                         <h6>
                                             <i class="step-icon"></i>
-                                            <span class="fonticon-wrap">
-                                                <i class="livicon-evo" data-options="name:morph-doc.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
-                                            </span>
+                                            <span>Informacion Basica</span>
                                         </h6>
-                                        <!-- Step 1 end-->
-                                        <!-- body content step 1 -->
+                                        <!-- Step 1 -->
+                                        <!-- body content of step 1 -->
                                         <fieldset>
                                             <div class="row">
-                                                <div class="col-12">
-                                                    <h6 class="py-50">Enter Your Personal Details</h6>
-                                                </div>
-                                                <div class="col-sm-6">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="firstName13">First Name </label>
-                                                        <input type="text" class="form-control" id="firstName13" placeholder="Enter Your First Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="lastName12">Last Name</label>
-                                                        <input type="text" class="form-control" id="lastName12" placeholder="Enter Your Last Name">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="emailAddress1">Email</label>
-                                                        <input type="email" class="form-control" id="emailAddress1" placeholder="Enter Your Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Phone</label>
-                                                        <input type="number" class="form-control" placeholder="Enter Your Phone Number">
+                                                        <label for="firstName3">Nombre Categoria </label>
+                                                        <input type="text" class="form-control required" name="firstName" placeholder="Ingrese el nombre de la categoria">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label>age</label>
-                                                        <input type="number" class="form-control" placeholder="Enter Your Age">
+                                                        <label for="lastName3">Descripcion de la categoria</label>
+                                                        <input type="text" class="form-control required" name="lastName" placeholder="Ingrese la descripcion de la categoria">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Código de la categoria</label>
+                                                        <input type="number" class="form-control required" placeholder="Código de la categoria">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="d-block">Gender</label>
-                                                        <div class="custom-control-inline">
-                                                            <div class="radio mr-1">
-                                                                <input type="radio" name="bsradio" id="radio1" checked="">
-                                                                <label for="radio1">Male</label>
-                                                            </div>
-                                                            <div class="radio">
-                                                                <input type="radio" name="bsradio" id="radio2" checked="">
-                                                                <label for="radio2">Female</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                        <!-- body content step 1 end-->
-                                        <!-- Step 2 -->
-                                        <h6>
-                                            <i class="step-icon"></i>
-                                            <span class="fonticon-wrap">
-                                                <i class="livicon-evo" data-options="name:truck.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
-                                            </span>
-                                        </h6>
-                                        <!-- Step 2 end-->
-                                        <!-- body content of step 2 -->
-                                        <fieldset>
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <h6 class="py-50">Enter Your Location</h6>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Address Line 1</label>
-                                                        <input type="text" class="form-control" placeholder="Enter House no./ Flate no.">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Address Line 2</label>
-                                                        <input type="text" class="form-control" placeholder="Enter Society name/ Area name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>LandMark</label>
-                                                        <input type="text" class="form-control" placeholder="Enter A Landmark">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>TOWN/CITY</label>
-                                                        <input type="text" class="form-control" placeholder="Enter Town/City">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>PINCODE</label>
-                                                        <input type="text" class="form-control" placeholder="Enter Your Pincode">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>STATE</label>
-                                                        <input type="text" class="form-control" placeholder="Enter Your State">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Country</label>
+                                                        <label for="location">Elaborado</label>
                                                         <select name="country" class="form-control">
-                                                            <option value="">Select</option>
-                                                            <option value="AF">Afghanistan</option>
-                                                            <option value="AX">Åland Islands</option>
-                                                            <option value="AL">Albania</option>
-                                                            <option value="DZ">Algeria</option>
-                                                            <option value="AS">American Samoa</option>
-                                                            <option value="AD">Andorra</option>
-                                                            <option value="AO">Angola</option>
-                                                            <option value="AI">Anguilla</option>
-                                                            <option value="AQ">Antarctica</option>
-                                                            <option value="ZW">Zimbabwe</option>
+                                                            <option value="">Seleccione</option>
+                                                            <option value="AF">La Paz</option>
+                                                            <option value="AX">Cochabamba</option>
+                                                            <option value="AL">Santa Cruz</option>
+                                                            <option value="DZ">Pando</option>
+                                                            <option value="AS">Beni</option>
+                                                            <option value="AD">Potosi</option>
+                                                            <option value="AO">Chuquisaca</option>
+                                                            <option value="AI">Tarija</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 d-flex align-items-center">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input" id="checkbox1" checked="">
-                                                            <label for="checkbox1">Permanent Delivery address</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </fieldset>
-                                        <!-- body content of step 2 end-->
+                                        <!-- body content of step 1 end -->
+                                        
                                         <!-- Step 3 -->
                                         <h6>
                                             <i class="step-icon"></i>
-                                            <span class="fonticon-wrap">
-                                                <i class="livicon-evo" data-options="name:home.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
-                                            </span>
+                                            <span>Event Details</span>
                                         </h6>
-                                        <!-- Step 3 end-->
-                                        <!-- body content of Step 3 -->
+                                        <!-- step 3 end -->
+                                        <!-- step 3 content -->
                                         <fieldset>
                                             <div class="row">
-                                                <div class="col-12">
-                                                    <h6 class="py-50">Enter Your Payment Methods</h6>
-                                                </div>
-                                                <div class="col-12">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <div class="d-flex justify-content-between flex-wrap align-items-center">
-                                                            <div class="vs-radio-con vs-radio-primary">
-                                                                <img src="../../../app-assets/images/pages/bank.png" alt="img-placeholder" height="40">
-                                                                <span>Card 12XX XXXX XXXX 0000</span>
+                                                        <label for="eventName3">
+                                                            Codigo QR
+                                                        </label>
+                                                        <input type="number" class="form-control required" id="eventName3" name="eventName" placeholder="Ingrese el Código QR">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="eventName3">
+                                                            Codigo Barra
+                                                        </label>
+                                                        <input type="number" class="form-control required" id="eventName3" name="eventName" placeholder="Ingrese el Código Barra">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="eventStatus3">Localizacion de la categoria</label>
+                                                        <select class="custom-select form-control required" id="eventStatus3" name="eventStatus">
+                                                            <option value="Planning">Central</option>
+                                                            <option value="In Progress">Sucursal </option>
+                                                            <option value="Finished">Puestito</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="mr-2">Estado Categoria :</label>
+                                                        <div class="c-inputs-stacked">
+                                                            <div class="d-inline-block mr-2">
+                                                                <fieldset>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" class="checkbox__input" id="checkbox6">
+                                                                        <label for="checkbox6">Activo</label>
+                                                                    </div>
+                                                                </fieldset>
                                                             </div>
-                                                            <div class="card-holder-name">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="card-expiration-date">
-                                                                11/2020
-                                                            </div>
-                                                            <div>
-                                                                <label>Enter CVV</label>
-                                                                <input type="password" class="form-control" placeholder="Enter Your CVV no.">
+                                                            <div class="d-inline-block">
+                                                                <fieldset>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" class="checkbox__input" id="checkbox5">
+                                                                        <label for="checkbox5">Inactivo</label>
+                                                                    </div>
+                                                                </fieldset>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <ul class="other-payment-options list-unstyled">
-                                                            <li class="pb-1">
-                                                                <div class="radio">
-                                                                    <input type="radio" name="pyradio" id="radio6" checked="">
-                                                                    <label for="radio6">Credit / Debit / ATM Card</label>
-                                                                </div>
-                                                            </li>
-                                                            <li class="pb-1">
-                                                                <div class="radio">
-                                                                    <input type="radio" name="pyradio" id="radio7" checked="">
-                                                                    <label for="radio7">Net Banking</label>
-                                                                </div>
-                                                            </li>
-                                                            <li class="pb-1">
-                                                                <div class="radio">
-                                                                    <input type="radio" name="pyradio" id="radio8" checked="">
-                                                                    <label for="radio8"> EMI (Easy Installment)</label>
-                                                                </div>
-                                                            </li>
-                                                            <li class="pb-1">
-                                                                <div class="radio">
-                                                                    <input type="radio" name="pyradio" id="radio9" checked="">
-                                                                    <label for="radio9"> Cash On Delivery</label>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                                <div class="col-12 d-flex">
-                                                    <div class="paypal cursor-pointer d-flex align-items-center">
-                                                        <div class="radio">
-                                                            <input type="radio" name="onlportal" id="paypal" checked="">
-                                                            <label for="paypal"></label>
-                                                        </div>
-                                                        <img src="../../../app-assets/images/pages/PayPal_logo.png" alt="PayPal Logo">
-                                                    </div>
-                                                    <div class="googlepay cursor-pointer pl-1 d-flex align-items-center">
-                                                        <div class="radio">
-                                                            <input type="radio" name="onlportal" id="googlepay" checked="">
-                                                            <label for="googlepay"></label>
-                                                        </div>
-                                                        <img src="../../../app-assets/images/pages/google-pay.png" height="30" alt="google Logo">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-12">
-                                                    <hr>
-                                                    <div class="form-group">
-                                                        <label>Enter Your Promocode</label>
-                                                        <input type="text" class="form-control" placeholder="Enter Your Promocode">
                                                     </div>
                                                 </div>
                                             </div>
                                         </fieldset>
-                                        <!-- body content of Step 3 end-->
+                                        <!-- step 3 content end-->
                                     </form>
                                 </div>
                             </div>
@@ -378,7 +251,7 @@
                     </div>
                 </div>
             </section>
-            <!-- Form wizard with number tabs section end -->
+            <!-- Form wizard with step validation section end -->
 
 
         </div>

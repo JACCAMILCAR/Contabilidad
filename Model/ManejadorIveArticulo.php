@@ -6,7 +6,7 @@ class ManejadorIveArticulo
 
 		function __construct()
 		{
-			$this->conexion =  new Conexion();
+			$this->conexion =  new Conectar();
 		}
 
 		public function registrarIveArticulo(IveArticulo $objetoIveArticulo)

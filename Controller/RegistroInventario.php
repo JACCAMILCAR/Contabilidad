@@ -1,26 +1,26 @@
 <?php
-    require_once("../Model/Conexion.php");
+    require_once("../Model/Conectar.php");
     require_once("../Model/IveAlmacen.php");
     require_once("../Model/IveArticulo.php");
     require_once("../Model/IveTransaccionArticulo.php");
     require_once("../Model/IveUnidad.php");
    
-    require_once("../Model/ManejadorIveAlmacen.php");
+    // require_once("../Model/ManejadorIveAlmacen.php");
     require_once("../Model/ManejadorIveArticulo.php");
-    require_once("../Model/ManejadorIveTransaccionArticulo.php");
-    require_once("../Model/ManejadorIveUnidad.php");
+    // require_once("../Model/ManejadorIveTransaccionArticulo.php");
+    // require_once("../Model/ManejadorIveUnidad.php");
        
     require_once("../Model/BuscadorIveArticulo.php");
     
-    $objetoIveAlmacen = new IveAlmacen();
+    // $objetoIveAlmacen = new IveAlmacen();
     $objetoIveArticulo = new IveArticulo();
-    $objetoIveTransaccionArticulo = new IveTransaccionArticulo();
-    $objetoIveUnidad = new IveUnidad();
+    // $objetoIveTransaccionArticulo = new IveTransaccionArticulo();
+    // $objetoIveUnidad = new IveUnidad();
   
-    $objetoManejadorIveAlmacen = new ManejadorIveAlmacen();
+    // $objetoManejadorIveAlmacen = new ManejadorIveAlmacen();
     $objetoManejadorIveArticulo = new ManejadorIveArticulo();    
-    $objetoManejadorIveTransaccionArticulo = new ManejadorIveTransaccionArticulo();
-    $objetoManejadorIveUnidad = new ManejadorIveUnidad();
+    // $objetoManejadorIveTransaccionArticulo = new ManejadorIveTransaccionArticulo();
+    // $objetoManejadorIveUnidad = new ManejadorIveUnidad();
 
     $objetoBuscadorIveArticulo = new BuscadorIveArticulo();
   
@@ -48,7 +48,7 @@
 //           echo '<script>alert("'.'Ya existe el CI'.'")</script>';  
 //     }else{
        
-        //$objetoIveArticulo->setcodArticulo($_REQUEST["idCargo"]);  
+        $objetoIveArticulo->setcodArticulo($_REQUEST["codArticulo"]);  
         $objetoIveArticulo->setcodMoneda(1);  
         $objetoIveArticulo->setcodUnidad($_REQUEST["codUnidad"]);  
         $objetoIveArticulo->setcodAlmacen($_REQUEST["codAlmacen"]);
@@ -62,19 +62,18 @@
         $objetoIveArticulo->setcodSucursal($_REQUEST["codSucursal"]);
         $objetoIveArticulo->setenviado(1);  
         
-
-       $exitoRegistro = $objetoManejadorIveArticulo->registrarIveArticulo($objetoIveArticulo);
-       if($exitoRegistro ==1 ){
-        echo '<script>alert("'.'Perfecto'.'")</script>'; 
-    }else{echo '<script>alert("'.'Error'.'")</script>'; }
+        var_dump($objetoIveArticulo)
+    //    $exitoRegistro = $objetoManejadorIveArticulo->registrarIveArticulo($objetoIveArticulo);
+    //    if($exitoRegistro ==1 ){
+    //     echo '<script>alert("'.'Perfecto'.'")</script>'; 
+    // }else{echo '<script>alert("'.'Error'.'")</script>'; }
 
     //     if($exitoRegistro ==1 ){
         
-    //     $idArticulo = $objetoBuscadorEmpleado->ultimoIdEmpleado();
+    //     $idArticulo = $objetoBuscadorIveArticulo->ultimoIdIveArticulo();
 
 
-    //     $objeto->setidEmpleado($idEmpleado);  
-    //     $objetoIveTransaccionArticulo->setcodTransArticulo($_REQUEST["conTransArticulo"]);  
+    //     // $objetoIveTransaccionArticulo->setcodTransArticulo($_REQUEST["codTransArticulo"]);  
     //     $objetoIveTransaccionArticulo->setcodSucursal($_REQUEST["codSucursal"]);         
     //     $objetoIveTransaccionArticulo->setcodUnidad($_REQUEST["codUnidad"]);
     //     $objetoIveTransaccionArticulo->setcodMoneda(1);

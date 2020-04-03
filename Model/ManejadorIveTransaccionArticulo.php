@@ -6,7 +6,7 @@ class ManejadorIveTransaccionArticulo
 
 		function __construct()
 		{
-			$this->conexion =  new Conexion();
+			$this->conexion =  new Conectar();
 		}
 
 		public function registrarIveTransaccionArticulo(IveTransaccionArticulo $objetoIveTransaccionArticulo)
@@ -143,21 +143,21 @@ class ManejadorIveTransaccionArticulo
 				return 0;
 			}
 		}//end function
-		public function eliminarIveTransaccionArticulo($codTransArticulo)
-		{
-			$sqlEliminarIveTransaccionArticulo = " DELETE FROM IveTransaccionArticulo WHERE codTransArticulo = :codTransArticulo ; ";
+		// public function eliminarIveTransaccionArticulo($codTransArticulo)
+		// {
+		// 	$sqlEliminarIveTransaccionArticulo = " DELETE FROM IveTransaccionArticulo WHERE codTransArticulo = :codTransArticulo ; ";
 
-			try{
-					$cmd = $this->conexion->prepare($sqlEliminarIveTransaccionArticulo;
-					$cmd->bindParam(':codTransArticulo', $codTransArticulo);
-					$cmd->execute();
-					return 1;
-			}catch(PDOException $e){
-				echo 'ERROR: No se logro realizar la eliminacion - '.$e->getMesage();
-				exit();
-				return 0;
-			}
-		}//end function
+		// 	try{
+		// 			$cmd = $this->conexion->prepare($sqlEliminarIveTransaccionArticulo;
+		// 			$cmd->bindParam(':codTransArticulo', $codTransArticulo);
+		// 			$cmd->execute();
+		// 			return 1;
+		// 	}catch(PDOException $e){
+		// 		echo 'ERROR: No se logro realizar la eliminacion - '.$e->getMesage();
+		// 		exit();
+		// 		return 0;
+		// 	}
+		// }//end function
 		
 
 	}//end class

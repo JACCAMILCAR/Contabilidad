@@ -4,10 +4,28 @@ class BuscadorIveArticulo{
 
 		function __construct()
 		{
-			$this->conexion =  new Conexion();
+			$this->conexion =  new Conectar();
         }
        
-		
+		public function ultimoIdArticulo()
+		{  
+
+			$idArticulo = 0;
+			$sqlIdEstudiante = "
+									select codArticulo from IveArticulo order by codArticulo desc limit 1;
+								"; 
+			$cmd = $this->conexion->prepare($sqlIdEstudiante);
+			$cmd->execute(); 
+			$idEstudianteDeLaConsulta = $cmd->fetch();
+          	
+            if($idEstudianteDeLaConsulta){
+            	
+            	$idArticulo = $idEstudianteDeLaConsulta['codArticulo'];
+
+	 	    }
+			return $idArticulo;
+		}
+
 		public function FechaActual()
 		{  
 
@@ -42,6 +60,127 @@ class BuscadorIveArticulo{
 	 	    }
 			return $horaFechaActual;
 		}
+
+
+		public function listaSucursal()
+		{
+			
+			$sqlListaC = "
+            SELECT codSucursal, nombreSucursal
+            FROM Sucursal
+            GROUP BY codSucursal;
+								";
+			$cmd = $this->conexion->prepare($sqlListaC);
+			$cmd->execute();
+			$listaCargoConsulta = $cmd->fetchAll();
+          	$listaSucursal = array();
+          	$i = 0;
+          	//verificar si hay datos y cargarlos
+            foreach($listaCargoConsulta as $list){
+            	  $objetoCargo = new Sucursal(); 
+            	  $objetoCargo->setcodSucursal($list['codSucursal']);
+                  $objetoCargo->setnombreSucursal($list['nombreSucursal']);
+            	  $listaSucursal[$i] = $objetoCargo;
+            	  $i++;
+		    }
+			return $listaSucursal;
+		}//end function
+		public function listaAlmacen()
+		{
+			
+			$sqlListaC = "
+            SELECT codAlmacen, descAlmacen
+            FROM IveAlmacen
+            GROUP BY codAlmacen;
+								";
+			$cmd = $this->conexion->prepare($sqlListaC);
+			$cmd->execute();
+			$listaCargoConsulta = $cmd->fetchAll();
+          	$listaAlmacen = array();
+          	$i = 0;
+          	//verificar si hay datos y cargarlos
+            foreach($listaCargoConsulta as $list){
+            	  $objetoCargo = new IveAlmacen(); 
+            	  $objetoCargo->setcodAlmacen($list['codAlmacen']);
+                  $objetoCargo->setdescAlmacen($list['descAlmacen']);
+            	  $listaAlmacen[$i] = $objetoCargo;
+            	  $i++;
+		    }
+			return $listaAlmacen;
+		}//end function
+
+		public function listaGrupoAlmacen()
+		{
+			
+			$sqlListaC = "
+            SELECT codGrupoAlmacen, descGrupoAlmacen
+            FROM IveGrupoAlmacen
+            GROUP BY codGrupoAlmacen;
+								";
+			$cmd = $this->conexion->prepare($sqlListaC);
+			$cmd->execute();
+			$listaCargoConsulta = $cmd->fetchAll();
+          	$listaGrupoAlmacen = array();
+          	$i = 0;
+          	//verificar si hay datos y cargarlos
+            foreach($listaCargoConsulta as $list){
+            	  $objetoCargo = new IveGrupoAlmacen(); 
+            	  $objetoCargo->setcodGrupoAlmacen($list['codGrupoAlmacen']);
+                  $objetoCargo->setdescGrupoAlmacen($list['descGrupoAlmacen']);
+            	  $listaGrupoAlmacen[$i] = $objetoCargo;
+            	  $i++;
+		    }
+			return $listaGrupoAlmacen;
+		}//end function
+
+		public function listaUnidad()
+		{
+			
+			$sqlListaC = "
+            SELECT codUnidad, descUnidad
+            FROM IveUnidad
+            GROUP BY codUnidad;
+								";
+			$cmd = $this->conexion->prepare($sqlListaC);
+			$cmd->execute();
+			$listaCargoConsulta = $cmd->fetchAll();
+          	$listaUnidad = array();
+          	$i = 0;
+          	//verificar si hay datos y cargarlos
+            foreach($listaCargoConsulta as $list){
+            	  $objetoCargo = new IveUnidad(); 
+            	  $objetoCargo->setcodUnidad($list['codUnidad']);
+                  $objetoCargo->setdescUnidad($list['descUnidad']);
+            	  $listaUnidad[$i] = $objetoCargo;
+            	  $i++;
+		    }
+			return $listaUnidad;
+		}//end function
+		public function listaConfigCodTransaccion()
+		{
+			
+			$sqlListaC = "
+            SELECT codTransaccion, descCodTransaccion
+            FROM IveConfigCodTransaccion
+            GROUP BY codTransaccion;
+								";
+			$cmd = $this->conexion->prepare($sqlListaC);
+			$cmd->execute();
+			$listaCargoConsulta = $cmd->fetchAll();
+          	$listaConfigCodTransaccion = array();
+          	$i = 0;
+          	//verificar si hay datos y cargarlos
+            foreach($listaCargoConsulta as $list){
+            	  $objetoCargo = new IveConfigCodTransaccion(); 
+            	  $objetoCargo->setcodTransaccion($list['codTransaccion']);
+                  $objetoCargo->setdescCodTransaccion($list['descCodTransaccion']);
+            	  $listaConfigCodTransaccion[$i] = $objetoCargo;
+            	  $i++;
+		    }
+			return $listaConfigCodTransaccion;
+		}//end function
+
+		//***************************************************** */
 		public function verificarSalidaRFID($idEmpleado)
 		{
 			$sqlVerificarEmpleado = "

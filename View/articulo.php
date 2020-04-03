@@ -1,24 +1,34 @@
-
 <?php
+session_start();
+if ($_SESSION["usuario"]!=null) {
+
+
 require('../Model/Conectar.php');
 require('../Model/Sucursal.php');
 require('../Model/BuscadorIveArticulo.php');
-// require('../Model/ReferenciaEmpleado.php');
-// require('../Model/TipoReferencia.php');
-// require('../Model/BuscadorEstadoCivil.php');
+require('../Model/IveAlmacen.php');
+require('../Model/IveGrupoAlmacen.php');
+require('../Model/IveUnidad.php');
+require('../Model/IveConfigCodTransaccion.php');
+
 
 $objetoBuscadorIveArticulo = new  BuscadorIveArticulo();
 $listaSucursal = array();
 $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
 
-// $listaEstadoCivil = array();
-// $listaEstadoCivil = $objetoBuscadorEstadoCivil->listaEstadoCivil();
+$listaAlmacen = array();
+$listaAlmacen = $objetoBuscadorIveArticulo->listaAlmacen();
 
-// $listaTipoReferencia = array();
-// $listaTipoReferencia = $objetoBuscadorEstadoCivil->listaTipoReferencia();
+$listaGrupoAlmacen = array();
+$listaGrupoAlmacen = $objetoBuscadorIveArticulo->listaGrupoAlmacen();
 
+$listaUnidad = array();
+$listaUnidad = $objetoBuscadorIveArticulo->listaUnidad();
 
-?>
+$listaConfigCodTransaccion = array();
+$listaConfigCodTransaccion = $objetoBuscadorIveArticulo->listaConfigCodTransaccion();
+  ?>
+  ?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -31,30 +41,30 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
     <meta name="keywords" content="admin template, Frest admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Inven TBD</title>
-    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/forms/wizard.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/wizard.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- END: Custom CSS-->
 
 </head>
@@ -74,10 +84,10 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
                     </div>
                     <ul class="nav navbar-nav float-right">
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="user-nav d-sm-flex d-none"><span class="user-name">Ronald Vega</span><span class="user-status text-muted">Adminstrador</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/7.png" alt="avatar" height="40" width="40"></span>
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name">Ronald Vega</span><span class="user-status text-muted">Adminstrador</span></div><span><img class="round" src="app-assets/images/portrait/small/7.png" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="../../../index.html"><i class="bx bx-power-off mr-50"></i> Salir</a>
+                                <a class="dropdown-item" href="../Controller/autentificacionControlador.php?opc=salir"><i class="bx bx-power-off mr-50"></i> Salir</a>
                             </div>
                         </li>
                     </ul>
@@ -92,8 +102,8 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item mr-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template/index.html">
-                        <div class="brand-logo"><img class="logo" src="../../../app-assets/images/logo/logo.png" /></div>
+                <li class="nav-item mr-auto"><a class="navbar-brand" href="tablero.php">
+                        <div class="brand-logo"><img class="logo" src="app-assets/images/logo/logo.png" /></div>
                         <h2 class="brand-text mb-0">INVEN TBD</h2>
                     </a></li>
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary" data-ticon="bx-disc"></i></a></li>
@@ -102,23 +112,23 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
-                <li class=" navigation-header"><span>GENERAL</span>
+                <li class="navigation-header"><span>GENERAL</span>
                 </li>
-                <li class=" nav-item"><a href="index.html"><i class="menu-livicon" data-icon="desktop"></i><span class="menu-title" data-i18ns="Dashboard">Tablero</span></a>
+                <li class="nav-item"><a href="tablero.php"><i class="bx bx-home-alt"></i><span class="menu-title" data-i18ns="Dashboard">Tablero</span></a>
                 </li>
-                <li class=" nav-item"><a href="solicitudConsumo.php"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Solicitud consumo (96)</span></a>
+                <li class="nav-item"><a href="solicitudConsumo.php"><i class="bx bxs-store"></i><span class="menu-title" data-i18ns="Form Wizard">Solicitud consumo (96)</span></a>
                 </li>
-                <li class=" navigation-header"><span>Forms &amp; Tables</span>
+                <li class="navigation-header"><span>Forms &amp; Tables</span>
                 </li>
-                <li class=" nav-item"><a href="articulo.php"><i class="menu-livicon" data-icon="priority-low"></i><span class="menu-title" data-i18ns="Form Wizard">Articulo</span></a>
+                <li class="nav-item"><a href="articulo.php"><i class="bx bx-customize"></i><span class="menu-title" data-i18ns="Form Wizard">Articulo</span></a>
                 </li>
-                <li class=" nav-item"><a href="categoria.php"><i class="menu-livicon" data-icon="thumbnails-big"></i><span class="menu-title" data-i18ns="Form Wizard">Categoria</span></a>
+                <li class="nav-item"><a href="categoria.php"><i class="bx bxs-purchase-tag"></i><span class="menu-title" data-i18ns="Form Wizard">Categoria</span></a>
                 </li>
-                <li class=" nav-item"><a href="provedores.php"><i class="menu-livicon" data-icon="truck"></i><span class="menu-title" data-i18ns="Form Wizard">Provedores</span></a>
+                <li class="nav-item"><a href="provedores.php"><i class="bx bxs-truck"></i><span class="menu-title" data-i18ns="Form Wizard">Provedores</span></a>
                 </li>
-                <li class=" nav-item"><a href="inventario.php"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
+                <li class="nav-item"><a href="inventario.php"><i class="bx bx-paste"></i><span class="menu-title" data-i18ns="Form Wizard">Inventario</span></a>
                 </li>
-                <li class=" nav-item"><a href="reporte.php"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18ns="Form Wizard">Reporte</span></a>
+                <li class="nav-item"><a href="reporte.php"><i class="bx bxs-pie-chart-alt"></i><span class="menu-title" data-i18ns="Form Wizard">Reporte</span></a>
                 </li>
             </ul>
         </div>
@@ -137,7 +147,7 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
                             <h5 class="content-header-title float-left pr-1 mb-0">Articulo</h5>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb p-0 mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="bx bx-home-alt"></i></a>
+                                    <li class="breadcrumb-item"><a href="tablero.php"><i class="bx bx-home-alt"></i></a>
                                     </li>
                                     <li class="breadcrumb-item active">Registro Articulos
                                     </li>
@@ -156,7 +166,7 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form action="................" class="wizard-vertical">
+                            <form action="../Controller/RegistroInventario.php" class="wizard-vertical">
                                 <!-- step 1 -->
                                 <h3>
                                     <span class="fonticon-wrap mr-1">
@@ -164,7 +174,7 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
                                     </span>
                                     <span class="icon-title">
                                         <span class="d-block">Categoria</span>
-                                        <small class="text-muted">Asignación de categoria al inventarioASAsaSAsaS.</small>
+                                        <small class="text-muted">Asignación de categoria al inventario.</small>
                                     </span>
                                 </h3>
                                 <!-- step 1 end-->
@@ -174,39 +184,55 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>Agencia Inventarioasassadasdadasdaasdasdasdadasdasdasdasds</label>
-                                                <select name="delivery" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
+                                                <label>Agencia Inventario</label>
+                                                <select name="codSucursal" class="form-control">
+                                                     <?php
+                                                        foreach ($listaSucursal as $sucursal) {
+                                                    ?>
+                                                    <option  value ="<?php echo $sucursal->getcodSucursal();?>">
+                                                         <?php
+                                                             echo $sucursal->getnombreSucursal();
+                                                         ?>
+                                                    </option>
                                                     <?php
-                                            foreach ($listaSucursal as $sucursal) {
-                                        ?>
-                                        <option class="form-control" value="<?php echo $sucursal->getcodSucursal();?>">
-                                             <?php
-                                                 echo $sucursal->getnombreSucursal();
-                                             ?>
-                                        </option>
-                                        <?php
-                                            }
-                                        ?>
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="eventLocation12">Código Almacen</label>
-                                                <select name="preferreddelivery" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="morning">Almacen General</option>
+                                                <select name="colAlmacen" class="form-control">
+                                                    <?php
+                                                        foreach ($listaAlmacen as $almacen) {
+                                                    ?>
+                                                    <option  value ="<?php echo $almacen->getcodAlmacen();?>">
+                                                         <?php
+                                                             echo $almacen->getdescAlmacen();
+                                                         ?>
+                                                    </option>
+                                                    <?php
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>Grupo de Articulos</label>
-                                                <select name="packaging" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="regular">Material de Escritorio</option>
-                                                    <option value="oversized">Material de Limpieza</option>
+                                                <select name="grupoArticulo" class="form-control">
+                                                    <?php
+                                                        foreach ($listaGrupoAlmacen as $grupoAlmacen) {
+                                                    ?>
+                                                    <option  value ="<?php echo $grupoAlmacen->getcodGrupoAlmacen();?>">
+                                                         <?php
+                                                             echo $grupoAlmacen->getdescGrupoAlmacen();
+                                                         ?>
+                                                    </option>
+                                                    <?php
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -231,25 +257,25 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="proposalTitle1">Código Articulo</label>
-                                                <input type="text" class="form-control" id="proposalTitle1" disabled placeholder="CCCT-OC-01-C-ART">
+                                                <input type="text" name="codigoArticulo" class="form-control" id="proposalTitle1"  placeholder="CCCT-OC-01-C-ART">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>C.A.</label>
-                                                <input type="text" class="form-control" disabled placeholder="000001">
+                                                <input type="text" name="codArticulo" class="form-control"  placeholder="000001">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Número de Orden</label>
-                                                <input type="text" class="form-control" placeholder="Escriba el numero de orden">
+                                                <input type="text" name="numOrden" class="form-control" placeholder="Escriba el numero de orden">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Obcervacion Articulo</label>
-                                                <input type="text" class="form-control" placeholder="Obcervacion">
+                                                <input type="text" name="glosaArticulo" class="form-control" placeholder="Obcervacion">
                                                 <small class="form-text text-muted">Detalle lo mas claro posible la observacion del articulo..</small>
                                             </div>
                                         </div>
@@ -274,79 +300,96 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="eventName13">Descripcion del producto</label>
-                                                <input type="text" class="form-control" id="eventName13" placeholder="Ingrese la descripcion del producto">
+                                                <input type="text" name="descArticulo" class="form-control" id="eventName13" placeholder="Ingrese la descripcion del producto">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Precio Unitario</label>
-                                                <input type="number" class="form-control" name="ccmonth" placeholder="Bolivianos" value="">
+                                                <input type="number" name="precioUnitario" class="form-control" name="ccmonth" placeholder="Bolivianos" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Precio Ponderado</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder="Ponderado" value="">
+                                                <input type="number" name="precioPonderado" class="form-control" name="ccyear" placeholder="Ponderado" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Cantidad Aticulo</label>
-                                                <input type="text" class="form-control" name="ccyear" placeholder="¿Cuantos articulos?" value="">
+                                                <input type="text" name="cantidadArticulo" class="form-control" name="ccyear" placeholder="¿Cuantos articulos?" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Saldo de la cantidad</label>
-                                                <input type="number" class="form-control" name="ccmonth" placeholder="Saldo de la cantidad" value="">
+                                                <input type="number" name="saldoCantidad" class="form-control" name="ccmonth" placeholder="Saldo de la cantidad" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Stock Minimo</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder=" Ejemplo: 20" value="">
+                                                <input type="number" name="stockMinimoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 20" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Stock MAximo</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
+                                                <input type="number" name="stockMaximoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Total Costo Articulo</label>
-                                                <input type="number" class="form-control" name="ccmonth" placeholder="Ejemplo: 100" value="">
+                                                <input type="number" name="totalCostoArticulo" class="form-control" name="ccmonth" placeholder="Ejemplo: 100" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Saldo costo Articulo</label>
-                                                <input type="number" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
+                                                <input type="number" name="saldoCostoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Unidad Articulo</label>
-                                                <select name="packaging" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="regular">01 - Piezas</option>
-                                                    <option value="oversized">02 - Resma</option>
+                                                <select name="codArticulo" class="form-control">
+                                                     <?php
+                                                        foreach ($listaUnidad as $unidad) {
+                                                    ?>
+                                                    <option  value ="<?php echo $unidad->getcodUnidad();?>">
+                                                         <?php
+                                                             echo $unidad->getdescUnidad();
+                                                         ?>
+                                                    </option>
+                                                    <?php
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Tipo Ingreso</label>
-                                                <select name="packaging" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="regular">01 - Compra de articulos</option>
-                                                    <option value="oversized">02 - Compra de algo</option>
+                                                <select name="codTransaccion" class="form-control">
+                                                    <?php
+                                                        foreach ($listaConfigCodTransaccion as $configCodTransaccion) {
+                                                    ?>
+                                                    <option  value ="<?php echo $configCodTransaccion->getcodTransaccion();?>">
+                                                         <?php
+                                                             echo $configCodTransaccion->getdescCodTransaccion();
+                                                         ?>
+                                                    </option>
+                                                    <?php
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
+                                <button>Aceptar</button>
                             </form>
                         </div>
                     </div>
@@ -374,30 +417,38 @@ $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
 
     
     <!-- BEGIN: Vendor JS-->
-    <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
-    <script src="../../../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
-    <script src="../../../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
-    <script src="../../../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="../../../app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
-    <script src="../../../app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
+    <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="../../../app-assets/js/scripts/configs/vertical-menu-light.js"></script>
-    <script src="../../../app-assets/js/core/app-menu.js"></script>
-    <script src="../../../app-assets/js/core/app.js"></script>
-    <script src="../../../app-assets/js/scripts/components.js"></script>
-    <script src="../../../app-assets/js/scripts/footer.js"></script>
+    <script src="app-assets/js/scripts/configs/vertical-menu-light.js"></script>
+    <script src="app-assets/js/core/app-menu.js"></script>
+    <script src="app-assets/js/core/app.js"></script>
+    <script src="app-assets/js/scripts/components.js"></script>
+    <script src="app-assets/js/scripts/footer.js"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="../../../app-assets/js/scripts/forms/wizard-steps.js"></script>
+    <script src="app-assets/js/scripts/forms/wizard-steps.js"></script>
     <!-- END: Page JS-->
 
 </body>
 <!-- END: Body-->
 
 </html>
+<?php
+}
+else
+{
+header('location: ../');
+//
+}
+?>

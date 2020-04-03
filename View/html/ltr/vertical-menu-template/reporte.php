@@ -14,35 +14,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
 
-     <!-- BEGIN: Vendor CSS-->
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/extensions/swiper.min.css">
-     <!-- END: Vendor CSS-->
- 
-     <!-- BEGIN: Theme CSS-->
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
-     <!-- END: Theme CSS-->
- 
-     <!-- BEGIN: Page CSS-->
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/extensions/swiper.css">
-     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/faq.css">
-     <!-- END: Page CSS-->
- 
-     <!-- BEGIN: Custom CSS-->
-     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
-     <!-- END: Custom CSS-->
-     
-
-
-      <!-- BEGIN: Vendor CSS-->
+    <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/select/select2.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -56,11 +29,40 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/forms/wizard.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
+
+
+
+
+
+
+     <!-- BEGIN: Vendor CSS-->
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/pickers/pickadate/pickadate.css">
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+     <!-- END: Vendor CSS-->
+ 
+     <!-- BEGIN: Theme CSS-->
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.css">
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
+     <!-- END: Theme CSS-->
+ 
+     <!-- BEGIN: Page CSS-->
+     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
+     <!-- END: Page CSS-->
+ 
+     <!-- BEGIN: Custom CSS-->
+     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+     <!-- END: Custom CSS-->
 
 </head>
 <!-- END: Head-->
@@ -130,128 +132,82 @@
     </div>
     <!-- END: Main Menu-->
 
-   <!-- BEGIN: Content-->
-   <div class="app-content content">
-    <div class="content-overlay"></div>
-    <div class="content-wrapper">
-        <div class="content-header row">
-            <div class="content-header-left col-12 mb-2 mt-1">
-                <div class="row breadcrumbs-top">
-                    <div class="col-12">
-                        <h5 class="content-header-title float-left pr-1 mb-0">Solicitud</h5>
-                        <div class="breadcrumb-wrapper col-12">
-                            <ol class="breadcrumb p-0 mb-0">
-                                <li class="breadcrumb-item"><a href="index.html"><i class="bx bx-home-alt"></i></a>
-                                </li>
-                                <li class="breadcrumb-item active">Solicitud de Consumo
-                                </li>
-                            </ol>
+    <!-- BEGIN: Content-->
+
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-12 mb-2 mt-1">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h5 class="content-header-title float-left pr-1 mb-0">Provedores</h5>
+                            <div class="breadcrumb-wrapper col-12">
+                                <ol class="breadcrumb p-0 mb-0">
+                                    <li class="breadcrumb-item"><a href="index.html"><i class="bx bx-home-alt"></i></a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Reporte de Sistema
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="content-body">
 
-            <!-- faq search start -->
-            <section class="faq-search">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card faq-bg bg-transparent box-shadow-0 p-1 p-md-5">
-                            <div class="card-content">
-                                <div class="card-body p-0">
-                                    <h1 class="faq-title text-center mb-3">Hola, ¿Buscamos?</h1>
-                                    <form>
-                                        <fieldset class="faq-search-width form-group position-relative w-50 mx-auto">
-                                            <input type="text" class="form-control round form-control-lg shadow pl-2" id="searchbar" placeholder="Busquemos por Código...">
-                                            <button class="btn btn-primary round position-absolute d-none d-sm-block" type="button">Buscar</button>
-                                            <button class="btn btn-primary round position-absolute d-block d-sm-none" type="button"><i class="bx bx-search"></i></button>
-                                        </fieldset>
-
-                                        <fieldset class="faq-search-width form-group position-relative w-50 mx-auto">
-                                            <input type="text" class="form-control round form-control-lg shadow pl-2" id="searchbar" placeholder="Escriba el nombre del cliente..">
-                                            <button class="btn btn-success round position-absolute d-none d-sm-block" type="button">Añadir</button>
-                                            <button class="btn btn-primary round position-absolute d-block d-sm-none" type="button"><i class="bx bx-search"></i></button>
-                                        </fieldset>
-                                    </form>
-                                    <p class="card-text text-center mt-3 font-medium-1 text-muted">
-                                        En caso que no exista el usuario entonces podremos registrarlo y añadir los productos para la factura <a href="venta.php">Procesar</a>.</p>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Bootstrap DateRange Picker start -->
+            <section id="daterange">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Reportes de Rango</h4>
+                        <p class="mt-1">Seleccione el rango de Fecha Inicio hasta Fecha fin para realizar el reporte</p>
                     </div>
-                </div>
-            </section>
-            <!-- faq search ends -->
-
-
-             <!-- faq start -->
-             <section class="faq">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- swiper start -->
-                        <div class="card bg-transparent shadow-none">
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <div class="swiper-centered-slides swiper-container p-1">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide rounded swiper-shadow" id="getting-text"> <i class="bx bx-flag mb-1 font-large-1"></i>
-                                                <div class="cent-text1">Articulo</div>
-                                            </div>
-                                            <div class="swiper-slide rounded swiper-shadow" id="pricing-text"> <i class="bx bx-dollar-circle mb-1 font-large-1"></i>
-                                                <div class="cent-text1">Categoria</div>
-                                            </div>
-                                            <div class="swiper-slide rounded swiper-shadow" id="sales-text"> <i class="bx bx-shopping-bag mb-1 font-large-1"></i>
-                                                <div class="cent-text1">Provedores</div>
-                                            </div>
-                                            <div class="swiper-slide rounded swiper-shadow" id="usage-text"> <i class="bx bx-book-open mb-1 font-large-1"></i>
-                                                <div class="cent-text1">Inventario</div>
-                                            </div>
-                                            <div class="swiper-slide rounded swiper-shadow" id="general-text"> <i class="bx bx-info-circle mb-1 font-large-1"></i>
-                                                <div class="cent-text1">Información</div>
-                                            </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <h6 align="center">Reporte Stock Minimo</h6><br>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="text" class="form-control showCalRanges" placeholder="Seleccione Fecha">
+                                                <div class="form-control-position">
+                                                    <i class='bx bx-calendar-check'></i>
+                                                </div>
+                                            </fieldset>
                                         </div>
-                                        <!-- Add Arrows -->
-                                        <div class="swiper-button-next"></div>
-                                        <div class="swiper-button-prev"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <h6 align="center">Reporte Stock Maximo</h6><br>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="text" class="form-control showCalRanges" placeholder="Seleccione fecha">
+                                                <div class="form-control-position">
+                                                    <i class='bx bx-calendar-check'></i>
+                                                </div>
+                                            </fieldset>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- swiper ends -->
                     </div>
                 </div>
             </section>
-            <!-- faq ends -->
+            <!-- Bootstrap DateRange Picker end -->
 
-            
-            <!-- fab bottom start -->
-            <section class="faq-bottom">
-                <div class="row d-flex justify-content-center mb-5">
-                    <div class="col-sm-12 col-md-4 text-center border rounded p-2 mr-md-2 m-1">
-                        <i class="bx bx-phone-call primary font-large-1 text-muted p-50"></i>
-                        <h5>+ (591) 6550***9</h5>
-                        <p class="text-muted font-medium-1">Siempre estamos felices de ayudar!</p>
-                    </div>
-                    <div class="col-sm-12 col-md-4 text-center border color-gray-faq rounded p-2 m-1">
-                        <i class="bx bx-mail-send primary font-large-1 p-50"></i>
-                        <h5><a href="mailto:hello@help.com">hello@help.com</a></h5>
-                        <p class="text-muted font-medium-1">¡La mejor manera de obtener una respuesta más rápida!</p>
-                    </div>
-                </div>
-            </section>
-            <!-- fab bottom ends -->
+
         </div>
     </div>
-</div>
-<!-- END: Content-->
+
+    <!-- END: Content-->
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0"><span class="float-left d-inline-block">2020 &copy; s@u-m@n¡ch</span>
+        <p class="clearfix mb-0"><span class="float-left d-inline-block">2020 &copy; s@u!-m@n¡ch</span>
             <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
         </p>
     </footer>
@@ -267,7 +223,8 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="../../../app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <script src="../../../app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
+    <script src="../../../app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -279,11 +236,14 @@
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="../../../app-assets/js/scripts/pages/faq.js"></script>
+    <script src="../../../app-assets/js/scripts/forms/wizard-steps.js"></script>
     <!-- END: Page JS-->
 
-    
-   
+
+
+
+
+
     <!-- BEGIN: Vendor JS-->
     <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
     <script src="../../../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
@@ -292,7 +252,12 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="../../../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+    <script src="../../../app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="../../../app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="../../../app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="../../../app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <script src="../../../app-assets/vendors/js/pickers/daterange/moment.min.js"></script>
+    <script src="../../../app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -303,7 +268,7 @@
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="../../../app-assets/js/scripts/forms/select/form-select2.js"></script>
+    <script src="../../../app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
     <!-- END: Page JS-->
 
 </body>
