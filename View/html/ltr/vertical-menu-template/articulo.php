@@ -1,3 +1,25 @@
+
+<?php
+require('../Model/Conexion.php');
+require('../Model/BuscadorAlmacen.php');
+require('../Model/BuscadorSucursal.php');
+require('../Model/BuscadorUnidad.php');
+
+
+$objetoBuscadorEstadoCivil = new  BuscadorEstadoCivil();
+$listaCargo = array();
+$listaCargo = $objetoBuscadorEstadoCivil->listaCargo();
+
+$listaEstadoCivil = array();
+$listaEstadoCivil = $objetoBuscadorEstadoCivil->listaEstadoCivil();
+
+$listaTipoReferencia = array();
+$listaTipoReferencia = $objetoBuscadorEstadoCivil->listaTipoReferencia();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -133,7 +155,7 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form action="#" class="wizard-vertical">
+                            <form action="../Controller/RegistroInventario.php" class="wizard-vertical">
                                 <!-- step 1 -->
                                 <h3>
                                     <span class="fonticon-wrap mr-1">
@@ -152,11 +174,19 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Agencia Inventario</label>
-                                                <select name="delivery" class="form-control">
+                                                <select name="codSucursal" class="form-control">
                                                     <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="overnight">01 - Central</option>
-                                                    <option value="express">02 - Sucursal</option>
-                                                    <option value="basic">03 - Puestito</option>
+                                                    <?php
+                                            foreach ($listaCargo as $cargo) {
+                                        ?>
+                                        <option value="<?php echo $cargo->getidCargo();?>">
+                                             <?php
+                                                 echo $cargo->getNombre();
+                                             ?>
+                                        </option>
+                                        <?php
+                                            }
+                                        ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -165,7 +195,17 @@
                                                 <label for="eventLocation12">Código Almacen</label>
                                                 <select name="preferreddelivery" class="form-control">
                                                     <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="morning">Almacen General</option>
+                                                     <?php
+                                            foreach ($listaCargo as $cargo) {
+                                        ?>
+                                        <option value="<?php echo $cargo->getidCargo();?>">
+                                             <?php
+                                                 echo $cargo->getNombre();
+                                             ?>
+                                        </option>
+                                        <?php
+                                            }
+                                        ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -173,9 +213,17 @@
                                             <div class="form-group">
                                                 <label>Grupo de Articulos</label>
                                                 <select name="packaging" class="form-control">
-                                                    <option value="" selected="" disabled>Seleccione una Opcion</option>
-                                                    <option value="regular">Material de Escritorio</option>
-                                                    <option value="oversized">Material de Limpieza</option>
+                                                   <?php
+                                            foreach ($listaCargo as $cargo) {
+                                        ?>
+                                        <option value="<?php echo $cargo->getidCargo();?>">
+                                             <?php
+                                                 echo $cargo->getNombre();
+                                             ?>
+                                        </option>
+                                        <?php
+                                            }
+                                        ?>  
                                                 </select>
                                             </div>
                                         </div>

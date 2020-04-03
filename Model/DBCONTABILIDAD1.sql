@@ -22,7 +22,7 @@ create table GnlConfigMoneda
 codMoneda SERIAL PRIMARY KEY,
 codSucursal INTEGER,
 enviado char(1) ,
-FOREIGN KEY (codSucursal) REFERENCES Sucursal (codSucursal)
+FOREIGN KEY (codSucursal) REFERENCES Sucursal(codSucursal)
 );
 
 INSERT INTO GnlConfigMoneda (codSucursal,enviado)values ('1','1'),('2','1'),('3','1');
