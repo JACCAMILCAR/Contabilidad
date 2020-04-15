@@ -1,7 +1,16 @@
 <?php
+
 session_start();
+
 if ($_SESSION["usuario"]!=null) {
-  ?>
+    require_once("../Model/Conectar.php");
+    require_once('../Model/BuscadorInventario.php');
+    $objetoBuscadorInventario = new BuscadorInventario();
+    $listaIveArticulo = array();
+    $listaIveArticulo = $objetoBuscadorInventario->listaIveArticulo();
+    ?>
+
+
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -191,258 +200,36 @@ if ($_SESSION["usuario"]!=null) {
                                         <thead>
                                             <tr>
                                                 <th>Articulo</th>
-                                                <th>Categoria</th>
-                                                <th>Agencia</th>
+                                                <th>Saldo Cantidad Articulo</th>
+                                                <th>Sucursal</th>
                                                 <th>Stock Minimo</th>
-                                                <th>Cantidad Inventario</th>
-                                                <th>Acción</th>
+                                                <th>Stock Maximo</th>
+                                                <th>Actualizar</th>
+                                                <th>Eliminar</th>
                                             </tr>
                                         </thead>
+                                        <?php
+                                                    foreach ($listaIveArticulo as $regArticulo) {
+                                                ?>
                                         <tbody>
+                                            
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Brielle Williamson</td>
-                                                <td>Integration Specialist</td>
-                                                <td>New York</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Herrod Chandler</td>
-                                                <td>Sales Assistant</td>
-                                                <td>San Francisco</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Rhona Davidson</td>
-                                                <td>Integration Specialist</td>
-                                                <td>Tokyo</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Colleen Hurst</td>
-                                                <td>Javascript Developer</td>
-                                                <td>San Francisco</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sonya Frost</td>
-                                                <td>Software Engineer</td>
-                                                <td>Edinburgh</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jena Gaines</td>
-                                                <td>Office Manager</td>
-                                                <td>London</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Quinn Flynn</td>
-                                                <td>Support Lead</td>
-                                                <td>Edinburgh</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Charde Marshall</td>
-                                                <td>Regional Director</td>
-                                                <td>San Francisco</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Haley Kennedy</td>
-                                                <td>Senior Marketing Designer</td>
-                                                <td>London</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tatyana Fitzpatrick</td>
-                                                <td>Regional Director</td>
-                                                <td>London</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Michael Silva</td>
-                                                <td>Marketing Designer</td>
-                                                <td>London</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Paul Byrd</td>
-                                                <td>Chief Financial Officer (CFO)</td>
-                                                <td>New York</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            <tr>
-                                                <td>Gloria Little</td>
-                                                <td>Systems Administrator</td>
-                                                <td>New York</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bradley Greer</td>
-                                                <td>Software Engineer</td>
-                                                <td>London</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Dai Rios</td>
-                                                <td>Personnel Lead</td>
-                                                <td>Edinburgh</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Thor Walton</td>
-                                                <td>Developer</td>
-                                                <td>New York</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Finn Camacho</td>
-                                                <td>Support Engineer</td>
-                                                <td>San Francisco</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serge Baldwin</td>
-                                                <td>Data Coordinator</td>
-                                                <td>Singapore</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Zenaida Frank</td>
-                                                <td>Software Engineer</td>
-                                                <td>New York</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
+                                                
+                                                <td><?php echo $regArticulo->getdescArticulo();?></td>
+                                                <td><?php echo $regArticulo->getsaldoCantidadArticulo();?></td>
+                                                <td><?php echo $regArticulo->getstockMinimoArticulo();?></td>
+                                                <td><?php echo $regArticulo->getstockMaximoArticulo();?></td>
+                                                <td><a href="IUActualizarIveArticulo.php?codArticulo=<?php echo $regArticulo->getcodArticulo(); ?>"></td>
+                                                <td><a href="../Controllers/EliminarIveArticulo.php?codArticulo=<?php echo $regArticulo->getcodArticulo(); ?>"></td>
 
-                                            <tr>
-                                                <td>Shad Decker</td>
-                                                <td>Regional Director</td>
-                                                <td>Edinburgh</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Michael Bruce</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>50</td>
-                                                <td>420</td>
-                                                <td><button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-0"><i class="bx bx-paint"></i></button>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-0"><i class="bx bx-trash"></i></button></td>
+
+                                                
+                                                 
                                             </tr>
                                         </tbody>
+                                           <?php
+                                                        }
+                                                    ?>
                                     </table>
                                 </div>
                             </div>

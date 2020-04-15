@@ -2,6 +2,7 @@
 
     class IveArticulo
     {
+
         public $codArticulo;
         public $codMoneda;
         public $codUnidad;
@@ -15,9 +16,10 @@
         public $stockMaximoArticulo;
         public $codSucursal;
         public $enviado;
-      
 
-        function __construct()
+        // public $fechaTransArticulo;
+
+              function __construct()
         { }
         //set
         public function setcodArticulo($codArticulo){$this->codArticulo = $codArticulo;}
@@ -34,6 +36,8 @@
         public function setcodSucursal($codSucursal){$this->codSucursal = $codSucursal;}
         public function setenviado($enviado){$this->enviado = $enviado;}
 
+        // public function setfechaTransArticulo($fechaTransArticulo){$this->fechaTransArticulo = $fechaTransArticulo;}
+
         //get
         public function getcodArticulo(){return $this->codArticulo;}
         public function getcodMoneda(){return $this->codMoneda;}
@@ -48,6 +52,8 @@
         public function getstockMaximoArticulo(){return $this->stockMaximoArticulo;}
         public function getcodSucursal(){return $this->codSucursal;}
         public function getenviado(){return $this->enviado;}
+        
+        // public function getfechaTransArticulo(){return $this->fechaTransArticulo;}
 
     }
 ?>

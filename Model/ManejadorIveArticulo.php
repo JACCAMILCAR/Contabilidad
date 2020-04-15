@@ -12,8 +12,8 @@ class ManejadorIveArticulo
 		public function registrarIveArticulo(IveArticulo $objetoIveArticulo)
 		{
 			
-			$sqlInsertarIveArticulo = " INSERT INTO IveArticulo(codArticulo,codMoneda,codUnidad,codAlmacen,descArticulo,glosaArticulo,glosaUnidadArticulo,saldoCantidadArticulo,saldoCostoArticulo,stockMinimoArticulo,stockMaximoArticulo,codSucursal,enviado) 
-			VALUES (:codArticulo,:codMoneda,:codUnidad,:codAlmacen,:descArticulo,:glosaArticulo,:glosaUnidadArticulo,:saldoCantidadArticulo,:saldoCostoArticulo,:stockMinimoArticulo,:stockMaximoArticulo,:codSucursal,:enviado); ";
+			$sqlInsertarIveArticulo = " INSERT INTO IveArticulo ( codArticulo , codMoneda , codUnidad , codAlmacen , descArticulo , glosaArticulo , glosaUnidadArticulo , saldoCantidadArticulo , saldoCostoArticulo , stockMinimoArticulo , stockMaximoArticulo , enviado ) 
+			VALUES (:codArticulo , :codMoneda , :codUnidad , :codAlmacen , :descArticulo , :glosaArticulo , :glosaUnidadArticulo , :saldoCantidadArticulo , :saldoCostoArticulo , :stockMinimoArticulo , :stockMaximoArticulo , :enviado ) ; ";
 				
 			$codArticulo = $objetoIveArticulo->getcodArticulo();
 			$codMoneda = $objetoIveArticulo->getcodMoneda();
@@ -42,7 +42,6 @@ class ManejadorIveArticulo
 			$cmd->bindParam(':saldoCostoArticulo', $saldoCostoArticulo);
 			$cmd->bindParam(':stockMinimoArticulo', $stockMinimoArticulo);
 			$cmd->bindParam(':stockMaximoArticulo', $stockMaximoArticulo);
-		    $cmd->bindParam(':codSucursal', $codSucursal);
 			$cmd->bindParam(':enviado', $enviado);
 		
 			$cmd->execute();

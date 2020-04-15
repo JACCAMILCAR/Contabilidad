@@ -12,10 +12,10 @@ class ManejadorIveTransaccionArticulo
 		public function registrarIveTransaccionArticulo(IveTransaccionArticulo $objetoIveTransaccionArticulo)
 		{
 			
-			$sqlInsertarIveTransaccionArticulo = " INSERT INTO IveTransaccionArticulo(codTransArticulo,codSucursal,codUnidad,codMoneda,codArticulo,codTransaccion,cuentaSolicitud,cuentaConsumo,fechaTransArticulo,horaTransArticulo,glosaTransArticulo,cantidadTransArticulo,costoUnidadArticulo,saldoCantidadArticulo,saldoCostoArticulo,tipoCambioMoneda,usuarioConsumo,usuarioRegistro,anulado,enviado) 
-			VALUES (:codTransArticulo,:codSucursal,:codUnidad,:codMoneda,:codArticulo,:codTransaccion,:cuentaSolicitud,:cuentaConsumo,:fechaTransArticulo,:horaTransArticulo,:glosaTransArticulo,:cantidadTransArticulo,:costoUnidadArticulo,:saldoCantidadArticulo,:saldoCostoArticulo,:tipoCambioMoneda,:usuarioConsumo,:usuarioRegistro,:anulado,:enviado); ";
+			$sqlInsertarIveTransaccionArticulo = " INSERT INTO IveTransaccionArticulo ( codSucursal , codUnidad , codMoneda , codArticulo , codTransaccion , cuentaSolicitud , cuentaConsumo , fechaTransArticulo , horaTransArticulo , glosaTransArticulo , cantidadTransArticulo , costoUnidadArticulo , saldoCantidadArticulo , saldoCostoArticulo, tipoCambioMoneda, usuarioConsumo , usuarioRegistro , anulado , enviado ) 
+			VALUES ( :codSucursal , :codUnidad , :codMoneda , :codArticulo , :codTransaccion , :cuentaSolicitud , :cuentaConsumo , :fechaTransArticulo , :horaTransArticulo , :glosaTransArticulo , :cantidadTransArticulo , :costoUnidadArticulo , :saldoCantidadArticulo , :saldoCostoArticulo , :tipoCambioMoneda , :usuarioConsumo , :usuarioRegistro , :anulado , :enviado ) ; ";
 				
-			$codTransArticulo = $objetoIveTransaccionArticulo->getcodTransArticulo();
+			// $codTransArticulo = $objetoIveTransaccionArticulo->getcodTransArticulo();
 			$codSucursal = $objetoIveTransaccionArticulo->getcodSucursal();
 			$codUnidad = $objetoIveTransaccionArticulo->getcodUnidad();
 			$codMoneda = $objetoIveTransaccionArticulo->getcodMoneda();
@@ -28,7 +28,9 @@ class ManejadorIveTransaccionArticulo
 			$glosaTransArticulo = $objetoIveTransaccionArticulo->getglosaTransArticulo();
 			$cantidadTransArticulo = $objetoIveTransaccionArticulo->getcantidadTransArticulo();
 			$costoUnidadArticulo = $objetoIveTransaccionArticulo->getcostoUnidadArticulo();
-			$saldoCostoArticulo = $objetoIveTransaccionArticulo->getsaldoCantidadArticulo();
+			$saldoCantidadArticulo = $objetoIveTransaccionArticulo->getsaldoCantidadArticulo();
+
+			$saldoCostoArticulo = $objetoIveTransaccionArticulo->getsaldoCostoArticulo();
 			$tipoCambioMoneda = $objetoIveTransaccionArticulo->gettipoCambioMoneda();
 			$usuarioConsumo = $objetoIveTransaccionArticulo->getusuarioConsumo();
 			$usuarioRegistro = $objetoIveTransaccionArticulo->getusuarioRegistro();
@@ -38,7 +40,7 @@ class ManejadorIveTransaccionArticulo
                     	
 			try{
 			$cmd = $this->conexion->prepare($sqlInsertarIveTransaccionArticulo);
-			$cmd->bindParam(':codTransArticulo', $codTransArticulo);
+			// $cmd->bindParam(':codTransArticulo', $codTransArticulo);
 			$cmd->bindParam(':codSucursal', $codSucursal);
 			$cmd->bindParam(':codUnidad', $codUnidad);
 			$cmd->bindParam(':codMoneda', $codMoneda);			
@@ -51,14 +53,13 @@ class ManejadorIveTransaccionArticulo
 			$cmd->bindParam(':glosaTransArticulo', $glosaTransArticulo);
 			$cmd->bindParam(':cantidadTransArticulo', $cantidadTransArticulo);
 			$cmd->bindParam(':costoUnidadArticulo', $costoUnidadArticulo);
+			$cmd->bindParam(':saldoCantidadArticulo', $saldoCantidadArticulo);
 			$cmd->bindParam(':saldoCostoArticulo', $saldoCostoArticulo);
 			$cmd->bindParam(':tipoCambioMoneda', $tipoCambioMoneda);
 			$cmd->bindParam(':usuarioConsumo', $usuarioConsumo);
 			$cmd->bindParam(':usuarioRegistro', $usuarioRegistro);			
 			$cmd->bindParam(':anulado', $anulado);
-			$cmd->bindParam(':enviado', $enviado);
-
-		
+			$cmd->bindParam(':enviado', $enviado);		
 			$cmd->execute();
 			return 1;
 			}catch(PDOException $e){
@@ -143,21 +144,21 @@ class ManejadorIveTransaccionArticulo
 				return 0;
 			}
 		}//end function
-		// public function eliminarIveTransaccionArticulo($codTransArticulo)
-		// {
-		// 	$sqlEliminarIveTransaccionArticulo = " DELETE FROM IveTransaccionArticulo WHERE codTransArticulo = :codTransArticulo ; ";
+		public function eliminarIveTransaccionArticulo($codTransArticulo)
+		{
+			$sqlEliminarIveTransaccionArticulo = " DELETE FROM IveTransaccionArticulo WHERE codTransArticulo = :codTransArticulo ; ";
 
-		// 	try{
-		// 			$cmd = $this->conexion->prepare($sqlEliminarIveTransaccionArticulo;
-		// 			$cmd->bindParam(':codTransArticulo', $codTransArticulo);
-		// 			$cmd->execute();
-		// 			return 1;
-		// 	}catch(PDOException $e){
-		// 		echo 'ERROR: No se logro realizar la eliminacion - '.$e->getMesage();
-		// 		exit();
-		// 		return 0;
-		// 	}
-		// }//end function
+			try{
+					$cmd = $this->conexion->prepare($sqlEliminarIveTransaccionArticulo);
+					$cmd->bindParam(':codTransArticulo', $codTransArticulo);
+					$cmd->execute();
+					return 1;
+			}catch(PDOException $e){
+				echo 'ERROR: No se logro realizar la eliminacion - '.$e->getMesage();
+				exit();
+				return 0;
+			}
+		}//end function
 		
 
 	}//end class

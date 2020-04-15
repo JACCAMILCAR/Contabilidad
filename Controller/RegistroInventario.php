@@ -7,19 +7,19 @@
    
     // require_once("../Model/ManejadorIveAlmacen.php");
     require_once("../Model/ManejadorIveArticulo.php");
-    // require_once("../Model/ManejadorIveTransaccionArticulo.php");
+    require_once("../Model/ManejadorIveTransaccionArticulo.php");
     // require_once("../Model/ManejadorIveUnidad.php");
        
     require_once("../Model/BuscadorIveArticulo.php");
     
     // $objetoIveAlmacen = new IveAlmacen();
     $objetoIveArticulo = new IveArticulo();
-    // $objetoIveTransaccionArticulo = new IveTransaccionArticulo();
+    $objetoIveTransaccionArticulo = new IveTransaccionArticulo();
     // $objetoIveUnidad = new IveUnidad();
   
     // $objetoManejadorIveAlmacen = new ManejadorIveAlmacen();
     $objetoManejadorIveArticulo = new ManejadorIveArticulo();    
-    // $objetoManejadorIveTransaccionArticulo = new ManejadorIveTransaccionArticulo();
+    $objetoManejadorIveTransaccionArticulo = new ManejadorIveTransaccionArticulo();
     // $objetoManejadorIveUnidad = new ManejadorIveUnidad();
 
     $objetoBuscadorIveArticulo = new BuscadorIveArticulo();
@@ -54,7 +54,7 @@
         $objetoIveArticulo->setcodAlmacen($_REQUEST["codAlmacen"]);
         $objetoIveArticulo->setdescArticulo($_REQUEST["descArticulo"]);
         $objetoIveArticulo->setglosaArticulo($_REQUEST["glosaArticulo"]);
-        $objetoIveArticulo->setglosaUnidadArticulo($_REQUEST["glosaUnidadArticulo"]);
+        $objetoIveArticulo->setglosaUnidadArticulo($_REQUEST["codUnidad"]);
         $objetoIveArticulo->setsaldoCantidadArticulo($_REQUEST["saldoCantidadArticulo"]);
         $objetoIveArticulo->setsaldoCostoArticulo($_REQUEST["saldoCostoArticulo"]);
         $objetoIveArticulo->setstockMinimoArticulo($_REQUEST['stockMinimoArticulo']); 
@@ -62,46 +62,44 @@
         $objetoIveArticulo->setcodSucursal($_REQUEST["codSucursal"]);
         $objetoIveArticulo->setenviado(1);  
         
-        var_dump($objetoIveArticulo)
-    //    $exitoRegistro = $objetoManejadorIveArticulo->registrarIveArticulo($objetoIveArticulo);
-    //    if($exitoRegistro ==1 ){
-    //     echo '<script>alert("'.'Perfecto'.'")</script>'; 
-    // }else{echo '<script>alert("'.'Error'.'")</script>'; }
+        // var_dump($objetoIveArticulo)
+       $exitoRegistro = $objetoManejadorIveArticulo->registrarIveArticulo($objetoIveArticulo);
+       if($exitoRegistro ==1 ){
+        echo '<script>alert("'.'Perfecto'.'")</script>'; 
+    }else{echo '<script>alert("'.'Error'.'")</script>'; }
 
-    //     if($exitoRegistro ==1 ){
-        
-    //     $idArticulo = $objetoBuscadorIveArticulo->ultimoIdIveArticulo();
+        // if($exitoRegistro ==1 ){
+        // $idArticulo = $objetoBuscadorIveArticulo->ultimoIdArticulo();
 
-
-    //     // $objetoIveTransaccionArticulo->setcodTransArticulo($_REQUEST["codTransArticulo"]);  
-    //     $objetoIveTransaccionArticulo->setcodSucursal($_REQUEST["codSucursal"]);         
-    //     $objetoIveTransaccionArticulo->setcodUnidad($_REQUEST["codUnidad"]);
-    //     $objetoIveTransaccionArticulo->setcodMoneda(1);
-    //     $objetoIveTransaccionArticulo->setcodArticulo($idArticulo);
-    //     $objetoIveTransaccionArticulo->setcodTransaccion(1);
-    //     $objetoIveTransaccionArticulo->setcuentaSolicitud(1);  
-    //     $objetoIveTransaccionArticulo->setcuentaConsumo(1);         
-    //     $objetoIveTransaccionArticulo->setfechaTransArticulo($fecha);
-    //     $objetoIveTransaccionArticulo->sethoraTransArticulo($hora);
-    //     $objetoIveTransaccionArticulo->setglosaTransArticulo($_REQUEST["glosaTransArticulo"]);
-    //     $objetoIveTransaccionArticulo->setcantidadTransArticulo($_REQUEST["cantidadTransArticulo"]);
-    //     $objetoIveTransaccionArticulo->setcostoUnidadArticulo($_REQUEST["costoUnidadArticulo"]);  
-    //     $objetoIveTransaccionArticulo->setsaldoCantidadArticulo($_REQUEST["saldoCantidadArticulo"]);         
-    //     $objetoIveTransaccionArticulo->setsaldoCostoArticulo($_REQUEST["saldoCostoArticulo"]);
-    //     $objetoIveTransaccionArticulo->settipoCambioMoneda(1);
-    //     $objetoIveTransaccionArticulo->setusuarioConsumo(2);
-    //     $objetoIveTransaccionArticulo->setusuarioRegistro(1);
-    //     $objetoIveTransaccionArticulo->setanulado(0);  
-    //     $objetoIveTransaccionArticulo->setenviado(1);         
+        // // $objetoIveTransaccionArticulo->setcodTransArticulo($_REQUEST["codTransArticulo"]);  
+        // $objetoIveTransaccionArticulo->setcodSucursal($_REQUEST["codSucursal"]);         
+        // $objetoIveTransaccionArticulo->setcodUnidad($_REQUEST["codUnidad"]);
+        // $objetoIveTransaccionArticulo->setcodMoneda(1);
+        // $objetoIveTransaccionArticulo->setcodArticulo($idArticulo);
+        // $objetoIveTransaccionArticulo->setcodTransaccion(1);
+        // $objetoIveTransaccionArticulo->setcuentaSolicitud(1);  
+        // $objetoIveTransaccionArticulo->setcuentaConsumo(1);         
+        // $objetoIveTransaccionArticulo->setfechaTransArticulo($fecha);
+        // $objetoIveTransaccionArticulo->sethoraTransArticulo($hora);
+        // $objetoIveTransaccionArticulo->setglosaTransArticulo("as");
+        // $objetoIveTransaccionArticulo->setcantidadTransArticulo(10);
+        // $objetoIveTransaccionArticulo->setcostoUnidadArticulo(21);  
+        // $objetoIveTransaccionArticulo->setsaldoCantidadArticulo(12);         
+        // $objetoIveTransaccionArticulo->setsaldoCostoArticulo(12);
+        // $objetoIveTransaccionArticulo->settipoCambioMoneda(1);
+        // $objetoIveTransaccionArticulo->setusuarioConsumo(2);
+        // $objetoIveTransaccionArticulo->setusuarioRegistro(1);
+        // $objetoIveTransaccionArticulo->setanulado(0);  
+        // $objetoIveTransaccionArticulo->setenviado(1);         
        
- 
-    //     $exitoRegistroR = $objetoManejadorReferenciaEmpleado->registrarReferenciaEmpleado($objetoReferenciaEmpleado);
-    //     if ($exitoRegistroR==1){
-    //       header('Location: ../VISTA/IUMostrarEmpleadoActual.php');
-    //         }else{
-    //         echo '<script>alert("'.'Error'.'")</script>'; 
-    //     }
-    // }
+        // var_dump($objetoIveTransaccionArticulo);
+        // $exitoRegistroR = $objetoManejadorIveTransaccionArticulo->registrarIveTransaccionArticulo($objetoIveTransaccionArticulo);
+        // if ($exitoRegistroR==1){
+        //   echo '<script>alert("'.'Perfecto'.'")</script>'; 
+        //     }else{
+        //     echo '<script>alert("'.'Error'.'")</script>'; 
+        // }
+   }
 
     
    // }

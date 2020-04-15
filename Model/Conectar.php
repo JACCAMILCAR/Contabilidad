@@ -5,7 +5,7 @@
 		private $servidor = 'localhost';
 		private $user = 'root';
 		private $password = '';
-		private $db = 'Contabilidad';
+		private $db = 'ContabilidadGrupo2';
 
 		public function __construct()
 		{

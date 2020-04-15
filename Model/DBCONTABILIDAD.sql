@@ -238,7 +238,7 @@ FOREIGN KEY (codSucursal) REFERENCES Sucursal (codSucursal)on update cascade on 
 
  create table IveTransaccionArticulo
  (
-codeTransArticulo int UNSIGNED not null auto_increment primary key,
+codTransArticulo int UNSIGNED not null auto_increment primary key,
 codSucursal int UNSIGNED not null,
 codUnidad int UNSIGNED not null,
 codMoneda int UNSIGNED not null,
@@ -299,3 +299,7 @@ create table IveArticuloFactura
  FOREIGN KEY (codArticulo) REFERENCES IveArticulo (codArticulo)on update cascade on delete cascade,
  FOREIGN KEY (codFactura) REFERENCES Factura (codFactura)on update cascade on delete cascade
 );
+
+
+INSERT INTO IveTransaccionArticulo(codSucursal,codUnidad,codMoneda,codArticulo,codTransaccion,cuentaSolicitud,cuentaConsumo,fechaTransArticulo,horaTransArticulo,glosaTransArticulo,cantidadTransArticulo,costoUnidadArticulo,saldoCantidadArticulo,saldoCostoArticulo,tipoCambioMoneda,usuarioConsumo,usuarioRegistro,anulado,enviado) 
+      VALUES (1,1,1,"A002",1,"2","32","2020-04-03","00:00:00","uu",23,23,12,12,12,"s","l",1,1);

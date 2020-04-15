@@ -2,17 +2,19 @@
 session_start();
 if ($_SESSION["usuario"]!=null) {
 
-
 require('../Model/Conectar.php');
 require('../Model/Sucursal.php');
 require('../Model/BuscadorIveArticulo.php');
+require('../Model/BuscadorIveUnidad.php');
+
 require('../Model/IveAlmacen.php');
 require('../Model/IveGrupoAlmacen.php');
 require('../Model/IveUnidad.php');
 require('../Model/IveConfigCodTransaccion.php');
 
-
 $objetoBuscadorIveArticulo = new  BuscadorIveArticulo();
+$objetoBuscadorIveUnidad = new  BuscadorIveUnidad();
+
 $listaSucursal = array();
 $listaSucursal = $objetoBuscadorIveArticulo->listaSucursal();
 
@@ -23,12 +25,12 @@ $listaGrupoAlmacen = array();
 $listaGrupoAlmacen = $objetoBuscadorIveArticulo->listaGrupoAlmacen();
 
 $listaUnidad = array();
-$listaUnidad = $objetoBuscadorIveArticulo->listaUnidad();
+$listaUnidad = $objetoBuscadorIveUnidad->listaUnidad();
 
 $listaConfigCodTransaccion = array();
-$listaConfigCodTransaccion = $objetoBuscadorIveArticulo->listaConfigCodTransaccion();
+$listaConfigCodTransaccion = $objetoBuscadorIveUnidad->listaConfigCodTransaccion();
   ?>
-  ?>
+
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -203,7 +205,7 @@ $listaConfigCodTransaccion = $objetoBuscadorIveArticulo->listaConfigCodTransacci
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="eventLocation12">Código Almacen</label>
-                                                <select name="colAlmacen" class="form-control">
+                                                <select name="codAlmacen" class="form-control">
                                                     <?php
                                                         foreach ($listaAlmacen as $almacen) {
                                                     ?>
@@ -257,15 +259,10 @@ $listaConfigCodTransaccion = $objetoBuscadorIveArticulo->listaConfigCodTransacci
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="proposalTitle1">Código Articulo</label>
-                                                <input type="text" name="codigoArticulo" class="form-control" id="proposalTitle1"  placeholder="CCCT-OC-01-C-ART">
+                                                <input type="text" name="codArticulo" class="form-control" id="proposalTitle1"  placeholder="CCCT-OC-01-C-ART">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>C.A.</label>
-                                                <input type="text" name="codArticulo" class="form-control"  placeholder="000001">
-                                            </div>
-                                        </div>
+                                       
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Número de Orden</label>
@@ -274,7 +271,7 @@ $listaConfigCodTransaccion = $objetoBuscadorIveArticulo->listaConfigCodTransacci
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>Obcervacion Articulo</label>
+                                                <label>Observacion Articulo</label>
                                                 <input type="text" name="glosaArticulo" class="form-control" placeholder="Obcervacion">
                                                 <small class="form-text text-muted">Detalle lo mas claro posible la observacion del articulo..</small>
                                             </div>
@@ -306,55 +303,55 @@ $listaConfigCodTransaccion = $objetoBuscadorIveArticulo->listaConfigCodTransacci
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Precio Unitario</label>
-                                                <input type="number" name="precioUnitario" class="form-control" name="ccmonth" placeholder="Bolivianos" value="">
+                                                <input type="text" name="precioUnitario" class="form-control" name="ccmonth" placeholder="Bolivianos" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Precio Ponderado</label>
-                                                <input type="number" name="precioPonderado" class="form-control" name="ccyear" placeholder="Ponderado" value="">
+                                                <input type="text" name="precioPonderado" class="form-control" name="ccyear" placeholder="Ponderado" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label>Cantidad Aticulo</label>
-                                                <input type="text" name="cantidadArticulo" class="form-control" name="ccyear" placeholder="¿Cuantos articulos?" value="">
+                                                <label>Cantidad Articulo</label>
+                                                <input type="text" name="saldoCantidadArticulo" class="form-control" name="ccyear" placeholder="¿Cuantos articulos?" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Saldo de la cantidad</label>
-                                                <input type="number" name="saldoCantidad" class="form-control" name="ccmonth" placeholder="Saldo de la cantidad" value="">
+                                                <input type="text" name="saldoCostoCantidad" class="form-control" name="ccmonth" placeholder="Saldo de la cantidad" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Stock Minimo</label>
-                                                <input type="number" name="stockMinimoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 20" value="">
+                                                <input type="text" name="stockMinimoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 20" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Stock MAximo</label>
-                                                <input type="number" name="stockMaximoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
+                                                <input type="text" name="stockMaximoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Total Costo Articulo</label>
-                                                <input type="number" name="totalCostoArticulo" class="form-control" name="ccmonth" placeholder="Ejemplo: 100" value="">
+                                                <input type="text" name="totalCostoArticulo" class="form-control" name="ccmonth" placeholder="Ejemplo: 100" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Saldo costo Articulo</label>
-                                                <input type="number" name="saldoCostoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
+                                                <input type="text" name="saldoCostoArticulo" class="form-control" name="ccyear" placeholder=" Ejemplo: 200" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Unidad Articulo</label>
-                                                <select name="codArticulo" class="form-control">
+                                                <select name="codUnidad" class="form-control">
                                                      <?php
                                                         foreach ($listaUnidad as $unidad) {
                                                     ?>
@@ -388,8 +385,9 @@ $listaConfigCodTransaccion = $objetoBuscadorIveArticulo->listaConfigCodTransacci
                                             </div>
                                         </div>
                                     </div>
+                                  <button>Aceptar</button>
+
                                 </fieldset>
-                                <button>Aceptar</button>
                             </form>
                         </div>
                     </div>
